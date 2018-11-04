@@ -97,14 +97,14 @@
 
 <meta name="description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sweetamily">
+<meta property="og:title" content="SweetaMily">
 <meta property="og:url" content="http://yoursite.com/2018/10/31/hello-world/index.html">
-<meta property="og:site_name" content="sweetamily">
+<meta property="og:site_name" content="SweetaMily">
 <meta property="og:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-04T05:10:15.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sweetamily">
+<meta name="twitter:title" content="SweetaMily">
 <meta name="twitter:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
 
 
@@ -141,7 +141,7 @@
 
 
 
-  <title> | sweetamily</title>
+  <title> | SweetaMily</title>
   
 
 
@@ -171,12 +171,12 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">sweetamily</span>
+        <span class="site-title">SweetaMily</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">blog</p>
+        <p class="site-subtitle">Live And Alive</p>
       
   </div>
 
@@ -232,6 +232,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
           </a>
         </li>
       
@@ -316,11 +326,11 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/header.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sweetamily">
+      <meta itemprop="name" content="SweetaMily">
     </span>
 
     
@@ -361,6 +371,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  773字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
           
 
           
@@ -494,6 +535,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="HaoChen">
+            
               <p class="site-author-name" itemprop="name">HaoChen</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -532,20 +575,6 @@
                 </a>
               </div>
             
-            <br>
-            <br>
-            <div class="site-state-item site-state-posts" style="border-left:none;">
-                   <span class="site-state-item-count" id="busuanzi_value_site_pv"></span>
-                   <span class="site-state-item-name">浏览量</span>
-            </div>
-            <div class="site-state-item site-state-posts">
-                  <span class="site-state-item-count" id="busuanzi_value_site_uv"></span>
-                 <span class="site-state-item-name">访客量</span>
-            </div>
-            <div class="site-state-item site-state-posts">
-                  <span class="site-state-item-count">6.4k</span>
-                  <span class="site-state-item-name">总字数</span>
-            </div>
           </nav>
 
           
@@ -566,6 +595,20 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/" title="Github" target="_blank">Github</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -1100,9 +1143,9 @@
   
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  <script type="text/javascript" color="0,0,0" opacity="0.6" zindex="-1" count="230" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 	
 	<script type="text/javascript" src="/js/src/love.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 </body>
 </html>
