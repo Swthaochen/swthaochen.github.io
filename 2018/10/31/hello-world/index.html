@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="sweetamily">
 <meta property="og:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-31T15:46:04.735Z">
+<meta property="og:updated_time" content="2018-11-04T05:10:15.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sweetamily">
 <meta name="twitter:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
@@ -160,7 +160,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">blog</p>
       
   </div>
 
@@ -186,6 +186,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
           </a>
         </li>
       
@@ -306,7 +326,6 @@
 <p>首先通过NPM安装Vuex：</p>
 <p>npm install –save vuex</p>
 <p>在main.js中通过Vue.use()使用Vuex：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>store包含了应用的数据（状态）和操作过程。任何组件使用同一store的操作的数据时，只要store的数据发生变化，对应的组件也会立刻更新。</p>
 <p>在任何组件内，可以直接通过$store.state.count 读取这个数据： </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;$store.state.count&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button @click="handleIncrement"&gt;+1&lt;/</span>button&gt;</span><br><span class="line">    &lt;button @click=<span class="string">"handleDecrease"</span>&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: 'HelloWorld',</span></span><br><span class="line"><span class="regexp">  data () &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      msg: 'Welcome to Your Vue.js App'</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods:&#123;</span></span><br><span class="line"><span class="regexp">    handleIncrement () &#123;</span></span><br><span class="line"><span class="regexp">      this.$store.commit('increment');</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    handleDecrease () &#123;</span></span><br><span class="line"><span class="regexp">      this.$store.commit('decrease');</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
@@ -358,8 +377,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/03/title computed和watch/" rel="prev" title="组件的继承">
-                组件的继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/03/一、computed相关的用法说明/" rel="prev" title="computed和watch">
+                computed和watch <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -434,6 +453,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
