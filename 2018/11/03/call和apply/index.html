@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="sweetamily">
 <meta property="og:description" content="call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name=&quot;viewport">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-03T05:50:24.334Z">
+<meta property="og:updated_time" content="2018-11-03T06:47:44.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply和call的用法">
 <meta name="twitter:description" content="call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name=&quot;viewport">
@@ -313,6 +313,8 @@
 <p>2.利用Function.prototype.bind来指定函数内部的this</p>
 <p>大部分的浏览器都实现了Function.prototype.bind这个函数用来指定Function的this指向。下面的这个例子用来模拟这个过程。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> self.apply(context,<span class="built_in">arguments</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   name:<span class="string">"Jone"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;.bind(obj);</span><br><span class="line">func(obj)</span><br></pre></td></tr></table></figure>
+<p>在定义Function.prototype.bind的时候，context就是我们想要修正的this对象。在函数体内，首先我们先用一个self对象将函数的引用保存起来，之后返回一个函数，这个函数就是在我们调用func()的时候被执行的。在函数的内部，self.apply才是执行原来的func函数，并且指定了context是这个函数的this。</p>
+<p>3.借用其他对象的方法 </p>
 
       
     </div>
@@ -413,7 +415,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
