@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="web缓存机制在chrome的开发者工具中，在network /Size一列中可以看见一些请求，如果在这列中明确标明大小KB,B，说明这是一个网络请求，否则一般都会明确标明：from memory cache,from disk cache和from ServiceWorker. 优先级依次是：  Service Worker Memory Cache Disk Cache 网络请求  1、Mem">
+<meta name="description" content="1.使用代理控制访问 2.使用代理的优化代码 2.1简单的说明 2.2node中运行代码的不同探究 2.3原因解释    1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/2017/02/22/web缓存机制/index.html">
+<meta property="og:title" content="js代理">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/js代理/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="web缓存机制在chrome的开发者工具中，在network /Size一列中可以看见一些请求，如果在这列中明确标明大小KB,B，说明这是一个网络请求，否则一般都会明确标明：from memory cache,from disk cache和from ServiceWorker. 优先级依次是：  Service Worker Memory Cache Disk Cache 网络请求  1、Mem">
+<meta property="og:description" content="1.使用代理控制访问 2.使用代理的优化代码 2.1简单的说明 2.2node中运行代码的不同探究 2.3原因解释    1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-04T05:10:50.065Z">
+<meta property="og:updated_time" content="2018-11-04T10:14:08.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="web缓存机制在chrome的开发者工具中，在network /Size一列中可以看见一些请求，如果在这列中明确标明大小KB,B，说明这是一个网络请求，否则一般都会明确标明：from memory cache,from disk cache和from ServiceWorker. 优先级依次是：  Service Worker Memory Cache Disk Cache 网络请求  1、Mem">
+<meta name="twitter:title" content="js代理">
+<meta name="twitter:description" content="1.使用代理控制访问 2.使用代理的优化代码 2.1简单的说明 2.2node中运行代码的不同探究 2.3原因解释    1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/22/web缓存机制/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/js代理/">
 
 
 
 
 
-  <title>标签 | SweetaMily</title>
+  <title>js代理 | SweetaMily</title>
   
 
 
@@ -321,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/web缓存机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js代理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">标签</h1>
+          <h1 class="post-title" itemprop="name headline">js代理</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-22T12:39:04+08:00">
-                2017-02-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
+                2018-11-04
               </time>
             
 
@@ -373,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/web基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">web基础知识</span>
+                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript高级特性</span>
                   </a>
                 </span>
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  937字
+                  1.7k字
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3分钟
+                  6分钟
                 </span>
               
             </div>
@@ -441,32 +441,48 @@
       
 
       
-        <h3 id="web缓存机制"><a href="#web缓存机制" class="headerlink" title="web缓存机制"></a>web缓存机制</h3><p>在chrome的开发者工具中，在network /Size一列中可以看见一些请求，如果在这列中明确标明大小KB,B，说明这是一个网络请求，否则一般都会明确标明：from memory cache,from disk cache和from ServiceWorker.</p>
-<p>优先级依次是：</p>
-<ul>
-<li>Service Worker</li>
-<li>Memory Cache</li>
-<li>Disk Cache</li>
-<li>网络请求</li>
+        <ul>
+<li><a href="#1">1.使用代理控制访问</a></li>
+<li><a href="#1">2.使用代理的优化代码</a><ul>
+<li><a href="#2.1">2.1简单的说明</a></li>
+<li><a href="#2.2">2.2node中运行代码的不同探究</a></li>
+<li><a href="#2.3">2.3原因解释</a></li>
 </ul>
-<p>1、Memory Cache</p>
-<p>​    它是内存中的缓存，和硬盘中的缓存相对。几乎所有的网络请求资源都会被浏览器加入到memory cache中去，但由于数量大所以是个短期的存储过程。当浏览的TAB页关闭的时候就失效了。或者一个页面占用的缓存过多的时候会导致前面的TAB缓存还没关闭就失效了。</p>
-<p>​    （1）preloader</p>
-<p>​    一般浏览器在打开网站的时候都是请求js/css，之后解析执行，然后再次解析下一个请求这样的穿行操作，那么现在，能不能一边解析js/css，一边请求下一个资源，这就是preloader所干的事。memory cache机制保证了一个页面中若有两个相同的请求的时候，（比如有两个相同href的<link>)都实际上只进行一次请求。在匹配缓存的时候，除了会对他们的URL进行匹配。也会对他们的类型、CORS中的域名规则进行校对。比如在script中缓存的资源不能用在image图片类型的请求中，即使他们的src相同。</p>
-<p>​    （2）从memory cache中获取缓存内容的时候，浏览器自动忽略max-age=0,no-cache这些头部配置。因为memory cache只是短时间使用，大部分生命周期只有一次。max-size意思也就是“不要在下次浏览时使用”，和memory cache不冲突。如果真的不想让一个资源进入缓存，即使一次都不想，就可以使用no-store。这样memory cache就不会存储它了</p>
-<p>2、disk cache</p>
-<p>​    也叫HTTP cache，是存储在硬盘上的缓存，是持久存储的，实际存在于文件系统当中。允许相同资源跨会话，甚至站点进行使用。他会严格根据HTTP头部信息进行判断哪些资源缓存，哪些可用，哪些过期了需要重新发送请求。命中之后浏览器会从硬盘中去读取资源，虽然过程会比内存中读取慢但是比网络请求快很多。一般大部分的缓存都是来自disk cache。</p>
-<p>3.Service Worker</p>
-<p>​    以上的缓存机制和读取，缓存以及失效的行为都是通过浏览器判断进行的，只能通过设置响应的头部告诉浏览器应该做什么。而Service Worker就是一种更直接的方式，这个缓存是永久的，即使关闭TAB或者是关闭浏览器都不能将其删除。只有以下两种情况才会将其删除：手动调用API：cache.delete(resource)或者容量溢出。会被浏览器清除。如果Service Worker没有命中，就会调用fetch()方法继续获取资源。虽然这个时候没有命中Service Worker缓存，用了网络请求，但是在Chrome中依然会被标记为from Service Worker。</p>
-<p>4.请求网络</p>
-<p>如果前面的三个缓存都没有命中，那么就通过网络请求的方式获取。但是在获取完成之后，需要处理如何将这个资源放在缓存中去的问题：</p>
-<ul>
-<li>根据Service Worker中的handle决定是否存入Cache Storage(额外的缓存位置)。</li>
-<li>根据HTTP头部的相关字段决定是否存入disk cache</li>
-<li>memory cache 保存一份资源 的引用</li>
+</li>
 </ul>
-<p>​    </p>
-<p>​    </p>
+<h2 id="1">1、使用代理控制访问</h2>
+
+<p>​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = &#123;</span><br><span class="line">    name:<span class="string">'liming'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> father = <span class="keyword">new</span> <span class="built_in">Proxy</span>(people,&#123;</span><br><span class="line">    get:<span class="function">(<span class="params">target,key</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(target[key])</span><br><span class="line">        <span class="keyword">if</span>(key <span class="keyword">in</span> target)</span><br><span class="line">            <span class="keyword">return</span> target[key]</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'The value do not exits'</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    set:<span class="function">(<span class="params">target,key,value</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Something changed'</span>);</span><br><span class="line">        target[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(father.name)</span><br><span class="line">father[<span class="string">'name'</span>] = <span class="string">"mingming"</span></span><br><span class="line"><span class="built_in">console</span>.log(people.name)</span><br><span class="line"><span class="built_in">console</span>.log(father.ta)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行结果</span></span><br><span class="line"><span class="comment">// liming</span></span><br><span class="line"><span class="comment">// liming</span></span><br><span class="line"><span class="comment">// Something changed</span></span><br><span class="line"><span class="comment">// mingming</span></span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// The value do not exits</span></span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>这里我们定义了一个people对象，并设置了他的代理father，并且在father中指定了getter和setter方法。首先先查看father的名称，这时候会触发father的getter并返回名称。如果这里在getter中不返回，在console.log返回将会是undefined。之后对father进行了赋值，调用了father的setter方法，并将target即people的name属性进行了重新设定。之后又对原来people中不存在的一个变量ta进行访问，这时候还会去调用getter方法，然后检查key不在target对象中的时候就会返回一个undefined。</p>
+<h2 id="2">2、使用代理的优化代码</h2>
+
+<h4 id="2.1">简单的说明</h4>
+
+<p>使用代理同时还可以优化代码。在不使用代理的时候，对一个对象的设置需要进行很多次的defineProperty的设置，如果需要为一个对象添加很多属性的时候就显得很多。但是利用了代理就能够很方便的解决这些问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeConstructor</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,&#123;</span><br><span class="line">        get:<span class="function">(<span class="params">target,property</span>) =&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Get function invoked'</span>)</span><br><span class="line">            <span class="keyword">return</span> target[property];</span><br><span class="line">        &#125;,</span><br><span class="line">        set:<span class="function">(<span class="params">target,property,value</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Set function invoked'</span>);</span><br><span class="line">            target[property] = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> peo = &#123;<span class="attr">name</span>:<span class="string">'Yoshi'</span>&#125;</span><br><span class="line">peo = makeConstructor(peo);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'分割线1'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(peo.name)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'分割线2'</span>)</span><br><span class="line">peo.weapon = <span class="string">'shui'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'分割线3'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(peo.weapon)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'分割线4'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(peo)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行结果：</span></span><br><span class="line"><span class="comment">// 分割线1</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// Yoshi</span></span><br><span class="line"><span class="comment">// 分割线2</span></span><br><span class="line"><span class="comment">// Set function invoked</span></span><br><span class="line"><span class="comment">// 分割线3</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// shui</span></span><br><span class="line"><span class="comment">// 分割线4</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br></pre></td></tr></table></figure>
+<p>首先定义了一个构造器，使用了一个对象target作为被代理的对象。然后调用了makeConstructor来构造对象和代理之间的关系，并在makeConstructor返回了新建的代理，并设置了相关的一些方法。然后可以发现，最开始对象只有一个name属性，在访问的时候会触发getter方法并返回它的值。之后对peo对象中之前不存在的一个属性weapon进行了设置，这时候可以看见触发了setter方法，并在对象中添加了一个名为”weapon”属性。之后又查看了刚刚添加的weapon方法。在最后可以看见，我们console.log输出peo这个对象，结果发现调用了三次get方法。为了探究我们对get方法进行一些处理。</p>
+<h4 id="2.2">node中运行代码的不同探究</h4>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeConstructor</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,&#123;</span><br><span class="line">        get:<span class="function">(<span class="params">target,property</span>) =&gt;</span>&#123;</span><br><span class="line">            <span class="comment">//console.log(property)</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Get function invoked'</span>)</span><br><span class="line">            <span class="keyword">return</span> target[property];</span><br><span class="line">        &#125;,</span><br><span class="line">        set:<span class="function">(<span class="params">target,property,value</span>) =&gt;</span> &#123;</span><br><span class="line">            target[property] = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> peo = &#123;<span class="attr">name</span>:<span class="string">'Yoshi'</span>&#125;</span><br><span class="line">peo = makeConstructor(peo);</span><br><span class="line">peo.weapon = <span class="string">'shui'</span></span><br><span class="line">peo.weapon1 = <span class="string">'shui'</span></span><br><span class="line">peo.weapon2 = <span class="string">'shui'</span></span><br><span class="line"><span class="built_in">console</span>.log(peo)</span><br><span class="line"></span><br><span class="line"><span class="comment">// //运行的结果：</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// Get function invoked</span></span><br><span class="line"><span class="comment">// &#123; name: 'Yoshi',</span></span><br><span class="line"><span class="comment">//   weapon: 'shui',</span></span><br><span class="line"><span class="comment">//   weapon1: 'shui',</span></span><br><span class="line"><span class="comment">//   weapon2: 'shui' &#125;</span></span><br></pre></td></tr></table></figure>
+<p>刚开始我的理解是在输出peo的时候，首先对peo这个类整体的访问会触发一次getter，之后对他里面的两个属性name和weapon访问取值的又是两次调用getter，这样就恰好三次。但是当我再增加几个属性的时候结果还是三次。然后就在get中每次输出property，可以看到下面的几个输出：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>(util.inspect.custom)</span><br><span class="line">inspect</span><br><span class="line"><span class="built_in">Symbol</span>(<span class="built_in">Symbol</span>.iterator)</span><br></pre></td></tr></table></figure>
+<h4 id="2.3">原因解释</h4>
+
+<p>​    因为我是在node里面运行这个代码的，所以console.log出来的实际上是将这个对象进行了处理输出了对象中的属性。实际上在chrome浏览器的控制台中输入的话运行出来的结果应该是一个代理的对象。然后由于在node中对对象进行了一些处理，所以难免会对get进行调用从而将对象转化成可视的字符串类型。以上这些代码实际上都是对这个对象进行的一系列的操作。是node中util自带的一些模块，就是为了弥补JavaScript中原始方法的不足。</p>
+<h3 div="3"><br>   3.使用代理实现自动的填充属性<br></h3>
+
+<p>当我们拥有一个对象具有很长一串属性的时候，通常我们可以通过代理来生成它没有的属性，避免带妈妈的重复和繁重。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Folder</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;,&#123;</span><br><span class="line">      get:<span class="function">(<span class="params">target,property</span>)=&gt;</span>&#123;</span><br><span class="line">         <span class="keyword">if</span>(!(property <span class="keyword">in</span> target))&#123;</span><br><span class="line">            target[property] = <span class="keyword">new</span> Folder();</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> target[property];</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myFile = <span class="keyword">new</span> Folder();</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">   myFile.root.first.second.next = <span class="string">"aa.txt"</span>;</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'error'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在try中虽然myFile并没有后面的一系列属性，但当我们读取的时候会调用代理中的get方法帮我们创建，这样的话即使这个属性不存在也不会出现undefined的问题。</p>
+<h3 id="4"><br>   4.使用代理实现数组的负索引<br></h3>
+
+<p>​    在python等语言中，是允许使用负索引来查找对象的，但是JavaScript不允许这样做，但是通过代理的方法我们可以来模拟这个过程。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createArray</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(array,&#123;</span><br><span class="line">        get:<span class="function">(<span class="params">target,index</span>) =&gt;</span>&#123;</span><br><span class="line">            index = +index</span><br><span class="line">            <span class="keyword">return</span> array[index &lt; <span class="number">0</span> ? target.length + index : index];</span><br><span class="line">        &#125;,</span><br><span class="line">        set:<span class="function">(<span class="params">target,index,value</span>) =&gt;</span> &#123;</span><br><span class="line">            index = +index</span><br><span class="line">            <span class="keyword">return</span> array[index &lt; <span class="number">0</span> ? target.length + index : index] = value</span><br><span class="line">    &#125;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> test = [<span class="string">'hh'</span>,<span class="string">'sss'</span>,<span class="string">'llll'</span>,<span class="string">'iii'</span>]</span><br><span class="line"><span class="keyword">const</span> test2 = createArray(test)</span><br><span class="line"><span class="built_in">console</span>.log(test2[<span class="number">-1</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(test2[<span class="number">-3</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(test[<span class="number">-1</span>])</span><br><span class="line"><span class="comment">//执行的结果是</span></span><br><span class="line"><span class="comment">// iii</span></span><br><span class="line"><span class="comment">// sss</span></span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>这里通过一元运算符+将属性名变成了数值。然后在代理中对他们的负数情况进行了相应的处理。然后新建一个test的数组，并创建它的代理，通过代理可以用负索引来访问数组中的值。</p>
+<h3 id="5"><br>   5.代理的性能消耗<br></h3>
+
+<p>相比较正常访问对象而言，使用代理去访问性能会慢很多，比如上个例子中，使用代理访问数组相互比较正常访问数组而言。在Chrome上时间为正常的50倍，所以使用代理的时候还是需要谨慎。如果是在多性能不敏感的情况下使用。</p>
 
       
     </div>
@@ -491,8 +507,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/22/前端11_2笔记——webpack/" rel="next" title="webpack">
-                <i class="fa fa-chevron-left"></i> webpack
+              <a href="/2018/11/04/title js迭代器模式/" rel="next" title="js迭代器模式">
+                <i class="fa fa-chevron-left"></i> js迭代器模式
               </a>
             
           </div>
@@ -500,10 +516,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/31/hello-world/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -660,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#web缓存机制"><span class="nav-number">1.</span> <span class="nav-text">web缓存机制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1、使用代理控制访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2、使用代理的优化代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2.1"><span class="nav-number">2.0.1.</span> <span class="nav-text">简单的说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2.2"><span class="nav-number">2.0.2.</span> <span class="nav-text">node中运行代码的不同探究</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2.3"><span class="nav-number">2.0.3.</span> <span class="nav-text">原因解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">   3.使用代理实现自动的填充属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">2.2.</span> <span class="nav-text">   4.使用代理实现数组的负索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">2.3.</span> <span class="nav-text">   5.代理的性能消耗</span></a></li></ol></div>
             
 
           </div>
