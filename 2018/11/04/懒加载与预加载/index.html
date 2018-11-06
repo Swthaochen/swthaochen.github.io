@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="JavaScript迭代器 在JavaScript的框架Jquery中，&amp;amp;.each是一个常用的迭代函数，通过这个each函数可以实现对一个数组的迭代。">
+<meta name="description" content="懒加载和预加载都是前端性能优化中对于图片的优化。从而使得用户有更好的上网体验 一、懒加载 1.1HTML中的懒加载方式 懒加载就是在延迟加载。一般的做法是不设置或者设置一个相同的图片src用来占位。并且将真正需要加载的图片地址放在img标签自定义的属性中（如：data-origin）。正如很多电商平台的做法，等到用户将浏览器的时候滑至该图片的位置上时，这时候由js监听并且将自定义属性中的值存放在s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js迭代器模式">
-<meta property="og:url" content="http://yoursite.com/2018/11/04/title js迭代器模式/index.html">
+<meta property="og:title" content="懒加载与预加载">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/懒加载与预加载/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="JavaScript迭代器 在JavaScript的框架Jquery中，&amp;amp;.each是一个常用的迭代函数，通过这个each函数可以实现对一个数组的迭代。">
+<meta property="og:description" content="懒加载和预加载都是前端性能优化中对于图片的优化。从而使得用户有更好的上网体验 一、懒加载 1.1HTML中的懒加载方式 懒加载就是在延迟加载。一般的做法是不设置或者设置一个相同的图片src用来占位。并且将真正需要加载的图片地址放在img标签自定义的属性中（如：data-origin）。正如很多电商平台的做法，等到用户将浏览器的时候滑至该图片的位置上时，这时候由js监听并且将自定义属性中的值存放在s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-05T14:38:05.436Z">
+<meta property="og:updated_time" content="2018-11-06T08:24:17.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js迭代器模式">
-<meta name="twitter:description" content="JavaScript迭代器 在JavaScript的框架Jquery中，&amp;amp;.each是一个常用的迭代函数，通过这个each函数可以实现对一个数组的迭代。">
+<meta name="twitter:title" content="懒加载与预加载">
+<meta name="twitter:description" content="懒加载和预加载都是前端性能优化中对于图片的优化。从而使得用户有更好的上网体验 一、懒加载 1.1HTML中的懒加载方式 懒加载就是在延迟加载。一般的做法是不设置或者设置一个相同的图片src用来占位。并且将真正需要加载的图片地址放在img标签自定义的属性中（如：data-origin）。正如很多电商平台的做法，等到用户将浏览器的时候滑至该图片的位置上时，这时候由js监听并且将自定义属性中的值存放在s">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/04/title js迭代器模式/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/懒加载与预加载/">
 
 
 
 
 
-  <title>js迭代器模式 | SweetaMily</title>
+  <title>懒加载与预加载 | SweetaMily</title>
   
 
 
@@ -321,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/title js迭代器模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/懒加载与预加载/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js迭代器模式</h1>
+          <h1 class="post-title" itemprop="name headline">懒加载与预加载</h1>
         
 
         <div class="post-meta">
@@ -373,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript高级特性</span>
+                  <a href="/categories/Web性能/" itemprop="url" rel="index">
+                    <span itemprop="name">Web性能</span>
                   </a>
                 </span>
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  41字
+                  1.1k字
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  4分钟
                 </span>
               
             </div>
@@ -441,8 +441,30 @@
       
 
       
-        <p>JavaScript迭代器</p>
-<p>在JavaScript的框架Jquery中，&amp;.each是一个常用的迭代函数，通过这个each函数可以实现对一个数组的迭代。</p>
+        <p>懒加载和预加载都是前端性能优化中对于图片的优化。从而使得用户有更好的上网体验</p>
+<p>一、懒加载</p>
+<p>1.1HTML中的懒加载方式</p>
+<p>懒加载就是在延迟加载。一般的做法是不设置或者设置一个相同的图片src用来占位。并且将真正需要加载的图片地址放在img标签自定义的属性中（如：data-origin）。正如很多电商平台的做法，等到用户将浏览器的时候滑至该图片的位置上时，这时候由js监听并且将自定义属性中的值存放在src中。这时候图片才开始加载。由此达到懒加载的效果。这样做的目的也是为了防止页面一次请求浏览器的数据量服务的数据量过大导致后面的一些js因为图片的渲染迟迟不能被执行导致出现一些错误，同时也能够防止服务器响应慢，卡顿的问题。而且一般情况下用户访问页面的长度不会太大，如果都一次性请求所有的资源的话会造成很大的带宽浪费。所以才会采用懒加载的方式进行。这样可以避免很多无效的请求和加载。</p>
+<p>懒加载的具体步骤是：</p>
+<ol>
+<li>在图片的img标签里src置为空或者直接防止一个默认的地址，真正的地址放在自己定义的标签属性名里。</li>
+<li>页面加载完成后，根据用户的滑屏情况进行判断图片的位置是否在用户当前的视野内。如果在，就将data-origin置为真实的值。</li>
+<li>当用户滑动视野的时候判断图片是否进入视野，如果进入就将data-origin的值放在src中，并且将之前自定义的属性删除。</li>
+</ol>
+<p>接下来通过一个实例来说明懒加载判断图片是否进入可视范围从而加载图片。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"root"</span>&gt;啊啊啊啊啊啊A啊啊啊啊啊&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!-- 若干行标签 --&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div id="root"&gt;啊啊啊啊啊啊A啊啊啊啊啊&lt;/</span>div&gt;</span><br><span class="line">    &lt;img src=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"image-item"</span> lazyload=<span class="string">"true"</span> data-original=<span class="string">"http://pic26.nipic.com/20121213/6168183_004444903000_2.jpg"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">var viewHeight = document.documentElement.clientHeight /</span><span class="regexp">/ 可视区域的高度</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function lazyload () &#123;</span></span><br><span class="line"><span class="regexp">  /</span><span class="regexp">/ 获取所有要进行懒加载的图片</span></span><br><span class="line"><span class="regexp">  var eles = document.querySelectorAll('img[data-original][lazyload]')</span></span><br><span class="line"><span class="regexp">  Array.prototype.forEach.call(eles, function (item, index) &#123;</span></span><br><span class="line"><span class="regexp">      console.log(item)</span></span><br><span class="line"><span class="regexp">    var rect</span></span><br><span class="line"><span class="regexp">    if (item.dataset.original === '')</span></span><br><span class="line"><span class="regexp">      return</span></span><br><span class="line"><span class="regexp">    rect = item.getBoundingClientRect()</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 图片一进入可视区，动态加载</span></span><br><span class="line"><span class="regexp">    if (rect.bottom &gt;= 0 &amp;&amp; rect.top - 40&lt; viewHeight) &#123;</span></span><br><span class="line"><span class="regexp">      !function () &#123;</span></span><br><span class="line"><span class="regexp">        var img = new Image()</span></span><br><span class="line"><span class="regexp">        img.src = item.dataset.original</span></span><br><span class="line"><span class="regexp">        img.onload = function () &#123;</span></span><br><span class="line"><span class="regexp">          item.src = img.src</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        item.removeAttribute('data-original')</span></span><br><span class="line"><span class="regexp">        item.removeAttribute('lazyload')</span></span><br><span class="line"><span class="regexp">      &#125;()</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;)</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 首屏要人为的调用，否则刚进入页面不显示图片</span></span><br><span class="line"><span class="regexp">lazyload()</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">document.addEventListener('scroll', lazyload)</span></span><br></pre></td></tr></table></figure>
+<p>首先这里定义了很多个div标签，是得在最下方的图片由于不在视野范围内所以暂时不进行加载。等到当用户滑动屏幕到图片的上边位置距离视野上方位置50像素的时候，图片的src被设置，同时进行没图片的加载。这里就实现了这个图片的懒加载。这楼里需要注意的是，在监听用户滑动的时候，我们用到了getBoundingClientRect这个函数，起作用是获取某个元素相对于视窗的位置。获得的都是某个元素的上下左右距离上边试图或者左边视图的距离。</p>
+<p>1.2Vue上实现的懒加载</p>
+<p>在Vue中，懒加载一般会使用插件vue-lazyload来实现，首先需要安装这个插件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-lazyload</span><br></pre></td></tr></table></figure>
+<p>在入口文件main.js中直接引用并使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueLazyLoad <span class="keyword">from</span> <span class="string">'vue-lazy</span></span><br></pre></td></tr></table></figure>
+<p>之后在这里直接使用这个模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(VueLazyLoad)</span><br></pre></td></tr></table></figure>
+<p>当然也可以根据官方文档中提供的API自定义选项：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(VueLazyLoad,&#123;</span><br><span class="line">   error:<span class="string">'dist/error.png'</span>,</span><br><span class="line">   loading:<span class="string">'dist/loading.png'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>同时在标签上修改图片的显示方式为懒加载的方式,注意这里是直接将src改成v-lazy：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img v-lazy=<span class="string">"/static/img/"</span>+item.productImage/&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -467,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/04/代理模式/" rel="next" title="js代理">
-                <i class="fa fa-chevron-left"></i> js代理
+              <a href="/2018/11/03/call和apply/" rel="next" title="apply和call的用法">
+                <i class="fa fa-chevron-left"></i> apply和call的用法
               </a>
             
           </div>
@@ -477,7 +499,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/04/js代理/" rel="prev" title="js代理">
+              <a href="/2018/11/04/代理模式/" rel="prev" title="js代理">
                 js代理 <i class="fa fa-chevron-right"></i>
               </a>
             
