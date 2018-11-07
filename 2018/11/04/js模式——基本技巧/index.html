@@ -95,13 +95,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="SweetaMily">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+<meta name="description" content="js模式——基本技巧反模式：暗示全局变量12 这里并没有对result进行定义，但是依然可以对result进行赋值和访问。只是因为在这里使用了反模式，暗示全局变量。这里没有用var定义的话result就是一个全局变量。 带有var声明的原型链：var a = b = 0;在这个语句中，a是局部变量，b是全局变量。 变量释放时的副作用隐含全局变量和明确定义的全局变量有一定差别，体现在能否使用dele">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js代理">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/js模式——基本技巧/index.html">
 <meta property="og:site_name" content="SweetaMily">
+<meta property="og:description" content="js模式——基本技巧反模式：暗示全局变量12 这里并没有对result进行定义，但是依然可以对result进行赋值和访问。只是因为在这里使用了反模式，暗示全局变量。这里没有用var定义的话result就是一个全局变量。 带有var声明的原型链：var a = b = 0;在这个语句中，a是局部变量，b是全局变量。 变量释放时的副作用隐含全局变量和明确定义的全局变量有一定差别，体现在能否使用dele">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-07T17:08:31.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SweetaMily">
+<meta name="twitter:title" content="js代理">
+<meta name="twitter:description" content="js模式——基本技巧反模式：暗示全局变量12 这里并没有对result进行定义，但是依然可以对result进行赋值和访问。只是因为在这里使用了反模式，暗示全局变量。这里没有用var定义的话result就是一个全局变量。 带有var声明的原型链：var a = b = 0;在这个语句中，a是局部变量，b是全局变量。 变量释放时的副作用隐含全局变量和明确定义的全局变量有一定差别，体现在能否使用dele">
 
 
 
@@ -131,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/11/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/js模式——基本技巧/">
 
 
 
 
 
-  <title>归档 | SweetaMily</title>
+  <title>js代理 | SweetaMily</title>
   
 
 
@@ -156,7 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/sweetamily" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -303,391 +307,210 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js模式——基本技巧/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">js代理</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
+                2018-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 16 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript高级特性</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/06/web缓存机制/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">标签</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  380字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-06T18:36:04+08:00" content="2018-11-06">
-          11-06
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/代理模式/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/原型/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="js模式——基本技巧"><a href="#js模式——基本技巧" class="headerlink" title="js模式——基本技巧"></a>js模式——基本技巧</h2><h3 id="反模式：暗示全局变量"><a href="#反模式：暗示全局变量" class="headerlink" title="反模式：暗示全局变量"></a>反模式：暗示全局变量</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里并没有对result进行定义，但是依然可以对result进行赋值和访问。只是因为在这里使用了反模式，暗示全局变量。这里没有用var定义的话result就是一个全局变量。</p>
+<p>带有var声明的原型链：var a = b = 0;在这个语句中，a是局部变量，b是全局变量。</p>
+<h3 id="变量释放时的副作用"><a href="#变量释放时的副作用" class="headerlink" title="变量释放时的副作用"></a>变量释放时的副作用</h3><p>隐含全局变量和明确定义的全局变量有一定差别，体现在能否使用delete操作符删除变量：</p>
+<ul>
+<li>使用var创建的全局变量（这类变量在函数外部创建）不能删除</li>
+<li>不使用var创建的隐含全局变量（尽管他是在函数内部创建的）可以删除</li>
+</ul>
+<p>可以看出实际上隐含全局变量实际上并不是真正的变量，而是全局对象的属性。属性是可以用delete删除的，而变量不行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>一般提倡在函数中先声明变量，在进行相关的操作，不然可能会出现一下的问题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name)	<span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">"xiaojun"</span></span><br><span class="line">    <span class="built_in">console</span>.log(name)	<span class="comment">//xiaojun</span></span><br><span class="line">&#125;</span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p>虽然这里，变量name在第一行感觉是一个隐含全局变量，但是由于在后面又声明了一个name，所以这里变量是一个局部变量，而由于上面的变量还没有用var定义，所以输出是未定义。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js生成器和promise/" itemprop="url">
-              
-                <span itemprop="name">生成器和Promise</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js实现继承/" itemprop="url">
-              
-                <span itemprop="name">js实现继承</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js模式——基本技巧/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js——闭包问题/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/title js迭代器模式/" itemprop="url">
-              
-                <span itemprop="name">js迭代器模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js代理/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/懒加载与预加载/" itemprop="url">
-              
-                <span itemprop="name">懒加载与预加载</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/04/js——闭包问题/" rel="next" title="js代理">
+                <i class="fa fa-chevron-left"></i> js代理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/04/js实现继承/" rel="prev" title="js实现继承">
+                js实现继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/11/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -695,6 +518,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -715,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -801,6 +637,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js模式——基本技巧"><span class="nav-number">1.</span> <span class="nav-text">js模式——基本技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反模式：暗示全局变量"><span class="nav-number">1.1.</span> <span class="nav-text">反模式：暗示全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量释放时的副作用"><span class="nav-number">1.2.</span> <span class="nav-text">变量释放时的副作用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -944,6 +796,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

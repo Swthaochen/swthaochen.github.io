@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、生成器函数类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示： 123456789function* myGenertor()&amp;#123;   yield &apos;test1&apos;;   yield &apos;test2&apos;;   yield &apos;test3&apos;;&amp;#125;for(let aa of myGenertor())&amp;#123;   console.log(aa)&amp;#125; 最后，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成器和Promise">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/js生成器和promise/index.html">
+<meta property="og:site_name" content="SweetaMily">
+<meta property="og:description" content="一、生成器函数类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示： 123456789function* myGenertor()&amp;#123;   yield &apos;test1&apos;;   yield &apos;test2&apos;;   yield &apos;test3&apos;;&amp;#125;for(let aa of myGenertor())&amp;#123;   console.log(aa)&amp;#125; 最后，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-07T17:11:37.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成器和Promise">
+<meta name="twitter:description" content="一、生成器函数类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示： 123456789function* myGenertor()&amp;#123;   yield &apos;test1&apos;;   yield &apos;test2&apos;;   yield &apos;test3&apos;;&amp;#125;for(let aa of myGenertor())&amp;#123;   console.log(aa)&amp;#125; 最后，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/js生成器和promise/">
+
+
+
+
+
+  <title>生成器和Promise | SweetaMily</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/sweetamily" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SweetaMily</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Live And Alive</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js生成器和promise/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">生成器和Promise</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
+                2018-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript高级特性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、生成器函数"><a href="#一、生成器函数" class="headerlink" title="一、生成器函数"></a>一、生成器函数</h3><p>类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">myGenertor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">yield</span> <span class="string">'test1'</span>;</span><br><span class="line">   <span class="keyword">yield</span> <span class="string">'test2'</span>;</span><br><span class="line">   <span class="keyword">yield</span> <span class="string">'test3'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> aa <span class="keyword">of</span> myGenertor())&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(aa)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，这个程序依次输出的是test1.test2和test3，这也是JavaScript的一个生成器。在定义函数的时候在function后面加一个*表示这是一个生成器函数，并通过关键字yield返回相应的值。并且，对于生成器函数来说，它不会像普通函数一样停止执行，而是当一个值的请求到来后，生成器就会从上次离开的地方继续开始执行。示例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">myGenertor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bb = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> bb;</span><br><span class="line">    bb++;</span><br><span class="line">    <span class="keyword">yield</span> bb;</span><br><span class="line">    <span class="keyword">yield</span> bb;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">let</span> aa <span class="keyword">of</span> myGenertor())&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(aa)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>从上面这个例子可知，第一次调用myGenenrtor这个生成器函数的时候，首先定义了一个名为bb的变量并且初始化为1，然后将这个值返回。第二次调用的时候，生成器不会像普通函数那样，再次从函数的开始执行，而是从上次执行的语句之后又开始执行b++，并返回此时bb的值为2.然后继续这个过程，返回的值是3.在这里，for-of循环就是对迭代器进行迭代的语法糖。</p>
+<h3 id="二、通过迭代对象控制生成器"><a href="#二、通过迭代对象控制生成器" class="headerlink" title="二、通过迭代对象控制生成器"></a>二、通过迭代对象控制生成器</h3><p>首先看下面这个例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">myGenertor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bb = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> bb;</span><br><span class="line">    bb++;</span><br><span class="line">    <span class="keyword">yield</span> bb;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> myIterator = myGenertor();</span><br><span class="line"><span class="built_in">console</span>.log(myIterator);</span><br><span class="line"><span class="built_in">console</span>.log(myIterator.next())</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myIterator.next())</span><br><span class="line"><span class="built_in">console</span>.log(myIterator.next())</span><br><span class="line"><span class="comment">//执行的结果为</span></span><br><span class="line"><span class="comment">//&#123;&#125;</span></span><br><span class="line"><span class="comment">//&#123; value: 1, done: false &#125;</span></span><br><span class="line"><span class="comment">//&#123; value: 2, done: false &#125;</span></span><br><span class="line"><span class="comment">//&#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+<p>在上面这个例子中，依然定义了一个生成器函数myGenertor，接下来调用这个生成器函数，但这一次赋给了一个名为myIterator的一个变量，如果直接输出这个变量，得到的是一个空的对象，只有对这个对象执行接口方法next(),生成器才开始执行代码，当代码执行到yield关键字的时候，生成一个中间结果并且返回一个新的对象，其中封装了一个结果值和指示完成的指示器。每当生成器生成一个值之后，生成器就会非阻塞挂起，等待下一次请求的到达。当没有可执行的代码的时候，生成器就会返回一个value为“undefined”，done为true的值，表示他的状态已完成。</p>
+<h3 id="三、利用生成器函数把执行权交给下一个生成器"><a href="#三、利用生成器函数把执行权交给下一个生成器" class="headerlink" title="三、利用生成器函数把执行权交给下一个生成器"></a>三、利用生成器函数把执行权交给下一个生成器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">myGenerator</span>(<span class="params">action</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> imposter = <span class="keyword">yield</span>(<span class="string">"hello"</span> + action);</span><br><span class="line">    <span class="comment">//第二次next开始执行</span></span><br><span class="line">    <span class="built_in">console</span>.log(imposter)</span><br><span class="line">    <span class="keyword">yield</span>(<span class="string">"nihao ("</span> + imposter + <span class="string">")"</span>  + action);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> test = myGenerator(<span class="string">"test1"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(test.next())</span><br><span class="line"><span class="built_in">console</span>.log(test.next(<span class="string">"myotherTest"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果：</span></span><br><span class="line"><span class="comment">// &#123; value: 'hellotest1', done: false &#125;</span></span><br><span class="line"><span class="comment">// myotherTest</span></span><br><span class="line"><span class="comment">// &#123; value: 'nihao (myotherTest)test1', done: false &#125;</span></span><br></pre></td></tr></table></figure>
+<p>​    上面这个实例中，在迭代器上使用yield*操作符，程序会跳转到另一个生成器上执行，这一切对于最初调用的迭代器而言都是透明的。</p>
+<h3 id="四、迭代器与生成器之间的交互"><a href="#四、迭代器与生成器之间的交互" class="headerlink" title="四、迭代器与生成器之间的交互"></a>四、迭代器与生成器之间的交互</h3><p>现在来讨论以下迭代器与生成器的交互问题，从而更好的理解生成器与迭代器之间的关系。首先先来看下面这段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">myGenerator</span>(<span class="params">action</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> imposter = <span class="keyword">yield</span>(<span class="string">"hello"</span> + action);</span><br><span class="line">    <span class="comment">//第二次next开始执行</span></span><br><span class="line">    <span class="built_in">console</span>.log(imposter)</span><br><span class="line">    <span class="keyword">yield</span>(<span class="string">"nihao ("</span> + imposter + <span class="string">")"</span>  + action);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> test = myGenerator(<span class="string">"test1"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(test.next())</span><br><span class="line"><span class="built_in">console</span>.log(test.next(<span class="string">"myotherTest"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果：</span></span><br><span class="line"><span class="comment">// &#123; value: 'hellotest1', done: false &#125;</span></span><br><span class="line"><span class="comment">// myotherTest</span></span><br><span class="line"><span class="comment">// &#123; value: 'nihao (myotherTest)test1', done: false &#125;</span></span><br></pre></td></tr></table></figure>
+<p>​    这里，我们给生成器一个参数action。首先新建一个迭代器并赋给test这样的一个变量。并且这个时候，我们已经给myGenerator赋予了一个参数，所以在下一次调用的时候，会输出”hello”加上这个参数。之后，生成器就在yield这里被挂起，imposter始终都没有被赋值直到下一次再次调用next()的时候，此时imposter被赋予了next中的值，这里是因为yield的返回值就是下一次调用next()的参数，所以imposter就被赋值。这也是为什么不能通过第一次调用next()向生成器提供参数的原因，但还是可以在构造的时候提供初值。（构造的时候仅仅是给参数赋值，但生成器函数是不会运行的）</p>
+<h3 id="五、生成器异常和处理"><a href="#五、生成器异常和处理" class="headerlink" title="五、生成器异常和处理"></a>五、生成器异常和处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">myGenerator</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">yield</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"出错了！！"</span> + e)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> test1 = myGenerator();</span><br><span class="line"><span class="built_in">console</span>.log(test1.next());</span><br><span class="line">test1.throw(<span class="string">"迭代器抛出了一个错误"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//  运行结果：</span></span><br><span class="line"><span class="comment">// &#123; value: 'hello', done: false &#125;</span></span><br><span class="line"><span class="comment">// 出错了！！迭代器抛出了一个错误</span></span><br></pre></td></tr></table></figure>
+<p>​    这里将生成器中全部的代码装入try-catch块中去。在创建了迭代器之后，通过调用迭代器中的throw方法抛出异常，并利用生成器函数中的catch语句进行异常的接受和处理。</p>
+<h3 id="六、promise和生成器解决异步问题"><a href="#六、promise和生成器解决异步问题" class="headerlink" title="六、promise和生成器解决异步问题"></a>六、promise和生成器解决异步问题</h3><p>首先测试下面的这段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delay</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">        setTimeout(resolve,time)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> delay(<span class="number">300</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">yield</span> <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">yield</span> delay(<span class="number">300</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="number">3</span>));</span><br><span class="line">    <span class="keyword">yield</span> <span class="built_in">console</span>.log(<span class="number">4</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> a = test()</span><br><span class="line">a.next();</span><br><span class="line">a.next();</span><br><span class="line">a.next();</span><br><span class="line">a.next();</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出为2，4，1，3</span></span><br></pre></td></tr></table></figure>
+<p>由于在生成器中存在异步操作，所以在使用next操作的时候，会存在异步问题。这时候检查第一个a.next()的返回值的时候，可以看到返回以下的结果：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; value: Promise &#123; &lt;pending&gt; &#125;, done: false &#125;</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>说明，对于一个<code>promise</code>，它的<code>then()</code>函数的返回值同样是一个<code>promise</code>对象。利用这个特性，将下次想要顺序执行的同步操作中的值放在promise函数的then之后，就可以得到我们想要的结果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = test()</span><br><span class="line">a.next().value.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    a.next()</span><br><span class="line">    a.next().value.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        a.next()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>可以发现，如果在遇到异步请求的时候，就使用.then()，如果遇到同步操作，就直接next()即可，所以可将上述代码整理成为下面的方法，利用递归来实现这个过程：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">himmel</span>(<span class="params">gen</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> item = gen.next()</span><br><span class="line">    <span class="keyword">if</span> (item.done) &#123;</span><br><span class="line">      <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">const</span> &#123; value, done &#125; = item</span><br><span class="line">    <span class="keyword">if</span> (value <span class="keyword">instanceof</span> <span class="built_in">Promise</span>) &#123;</span><br><span class="line">      value.then(<span class="function">(<span class="params">e</span>) =&gt;</span> himmel(gen))</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      himmel(gen)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最终，执行的结果就是按照顺序执行的1，2，3，4​    </p>
+<p>###番外</p>
+<p>异步问题的另一种解决方案——利用闭包来实现：</p>
+<p>首先还是先看下面这个异步的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delay</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">        setTimeout(resolve,time)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)&#123;</span><br><span class="line">        delay(<span class="number">300</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'这是第'</span> + i + <span class="string">'一段输出'</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'这个应该在第'</span> + i + <span class="string">'次异步操作执行结束后才输出'</span>)</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">4</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'end'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果</span></span><br><span class="line"><span class="comment">//这个应该在第0次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这个应该在第1次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这个应该在第2次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这个应该在第3次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这个应该在第4次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//end</span></span><br><span class="line"><span class="comment">//这是第5一段输出</span></span><br><span class="line"><span class="comment">//这是第5一段输出</span></span><br><span class="line"><span class="comment">//这是第5一段输出</span></span><br><span class="line"><span class="comment">//这是第5一段输出</span></span><br><span class="line"><span class="comment">//这是第5一段输出</span></span><br></pre></td></tr></table></figure>
+<p>​    上面的代码是一个典型的异步的问题，由于delay()是一个异步操作，所以在程序运行到delay的时候，将这个操作放在异步事件的队列中，先去进行同步操作，于是本该在异步操作执行结束之后执行的语句被优先执行了。并且程序在异步操作还没来得及开始就宣布结束了。并且之后，由于全局变量中的i已经增加到了5，所以最后得到的都是5，这显然不是我们预期的结果。首先解决i的问题，这里需要加一个闭包，将每次执行的i纪录下来，并且利用递归，在每次异步操作回调之后在递归下一次的操作，直到达到程序的终点为止。这样也就完成了程序从异步变为同步的操作。具体代码如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delay</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">        setTimeout(resolve,time)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span> <span class="title">iter</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">        delay(<span class="number">300</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'这是第'</span> + i + <span class="string">'一段输出'</span>);</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'这个应该在第'</span> + i + <span class="string">'次异步操作执行结束后才输出'</span>)</span><br><span class="line">            <span class="keyword">if</span>(i == <span class="number">4</span>)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'end'</span>)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                iter(i+<span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)(<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line"><span class="comment">//这是第0一段输出</span></span><br><span class="line"><span class="comment">//这个应该在第0次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这是第1一段输出</span></span><br><span class="line"><span class="comment">//这个应该在第1次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这是第2一段输出</span></span><br><span class="line"><span class="comment">//这个应该在第2次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这是第3一段输出</span></span><br><span class="line"><span class="comment">//这个应该在第3次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//这是第4一段输出</span></span><br><span class="line"><span class="comment">//这个应该在第4次异步操作执行结束后才输出</span></span><br><span class="line"><span class="comment">//end</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/04/js实现继承/" rel="next" title="js实现继承">
+                <i class="fa fa-chevron-left"></i> js实现继承
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/04/原型/" rel="prev" title="js代理">
+                js代理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="HaoChen">
+            
+              <p class="site-author-name" itemprop="name">HaoChen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sweetamily" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/" title="Github" target="_blank">Github</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、生成器函数"><span class="nav-number">1.</span> <span class="nav-text">一、生成器函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、通过迭代对象控制生成器"><span class="nav-number">2.</span> <span class="nav-text">二、通过迭代对象控制生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、利用生成器函数把执行权交给下一个生成器"><span class="nav-number">3.</span> <span class="nav-text">三、利用生成器函数把执行权交给下一个生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、迭代器与生成器之间的交互"><span class="nav-number">4.</span> <span class="nav-text">四、迭代器与生成器之间的交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、生成器异常和处理"><span class="nav-number">5.</span> <span class="nav-text">五、生成器异常和处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、promise和生成器解决异步问题"><span class="nav-number">6.</span> <span class="nav-text">六、promise和生成器解决异步问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HaoChen</span>
+
+  
+</div>
+<p>best for best!</p>    <!--文字-->
+<a href="www.baidu.com">百度</a>   <!--链接-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" color="0,0,0" opacity="0.6" zindex="-1" count="230" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+	
+	<script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
