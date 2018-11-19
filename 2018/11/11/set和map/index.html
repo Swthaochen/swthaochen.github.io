@@ -84,7 +84,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript设计模式,虚拟代理,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -95,18 +95,17 @@
 
 
 
-<meta name="description" content="1.保护代理和虚拟代理在前面的js学习中，ES6语法里有个proxy对象可以创建一个代理，可以通过代理实现控制不同权限的对象对目标对象的访问，从而实现对一些对象访问的过滤。虚拟代理的意思是，把一些开销大的对象，放在真正需要她的时候去创建。这是为了系统性能和一些特殊需要的考虑。由于js不容易判断是哪个对象访问了目标，所以JavaScript中不容易实现保护模式。常用的还是虚拟代理。 2.利用虚拟代理">
-<meta name="keywords" content="JavaScript设计模式,虚拟代理">
+<meta name="description" content="Set的用法​    在python语言中，Set实际上是一个新的数据结构名叫集合。正如同数学当中的集合一样，在集合中的所有成员的值都是唯一的，不能有重复。ECMAScript6也仿造了这一点有一个Set数据结构。通常是通过new一个Set类型的对象，然后向里面添加元素。如果有重复他会自动去删除这些相同的元素。 123const s = new Set();[6,8,1,5,6,2,3,4,5].">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js代理">
-<meta property="og:url" content="http://yoursite.com/2018/11/04/代理模式/index.html">
+<meta property="og:title" content="ES6语法——Set和Map数据结构">
+<meta property="og:url" content="http://yoursite.com/2018/11/11/set和map/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="1.保护代理和虚拟代理在前面的js学习中，ES6语法里有个proxy对象可以创建一个代理，可以通过代理实现控制不同权限的对象对目标对象的访问，从而实现对一些对象访问的过滤。虚拟代理的意思是，把一些开销大的对象，放在真正需要她的时候去创建。这是为了系统性能和一些特殊需要的考虑。由于js不容易判断是哪个对象访问了目标，所以JavaScript中不容易实现保护模式。常用的还是虚拟代理。 2.利用虚拟代理">
+<meta property="og:description" content="Set的用法​    在python语言中，Set实际上是一个新的数据结构名叫集合。正如同数学当中的集合一样，在集合中的所有成员的值都是唯一的，不能有重复。ECMAScript6也仿造了这一点有一个Set数据结构。通常是通过new一个Set类型的对象，然后向里面添加元素。如果有重复他会自动去删除这些相同的元素。 123const s = new Set();[6,8,1,5,6,2,3,4,5].">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-04T15:38:56.252Z">
+<meta property="og:updated_time" content="2018-11-19T06:39:36.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js代理">
-<meta name="twitter:description" content="1.保护代理和虚拟代理在前面的js学习中，ES6语法里有个proxy对象可以创建一个代理，可以通过代理实现控制不同权限的对象对目标对象的访问，从而实现对一些对象访问的过滤。虚拟代理的意思是，把一些开销大的对象，放在真正需要她的时候去创建。这是为了系统性能和一些特殊需要的考虑。由于js不容易判断是哪个对象访问了目标，所以JavaScript中不容易实现保护模式。常用的还是虚拟代理。 2.利用虚拟代理">
+<meta name="twitter:title" content="ES6语法——Set和Map数据结构">
+<meta name="twitter:description" content="Set的用法​    在python语言中，Set实际上是一个新的数据结构名叫集合。正如同数学当中的集合一样，在集合中的所有成员的值都是唯一的，不能有重复。ECMAScript6也仿造了这一点有一个Set数据结构。通常是通过new一个Set类型的对象，然后向里面添加元素。如果有重复他会自动去删除这些相同的元素。 123const s = new Set();[6,8,1,5,6,2,3,4,5].">
 
 
 
@@ -136,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/04/代理模式/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/11/set和map/">
 
 
 
 
 
-  <title>js代理 | SweetaMily</title>
+  <title>ES6语法——Set和Map数据结构 | SweetaMily</title>
   
 
 
@@ -322,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/代理模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/set和map/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -339,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js代理</h1>
+          <h1 class="post-title" itemprop="name headline">ES6语法——Set和Map数据结构</h1>
         
 
         <div class="post-meta">
@@ -351,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
-                2018-11-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-11T11:08:00+08:00">
+                2018-11-11
               </time>
             
 
@@ -374,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript高级特性</span>
+                  <a href="/categories/js基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">js基础知识</span>
                   </a>
                 </span>
 
@@ -405,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  290字
+                  1k字
                 </span>
               
 
@@ -421,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -442,8 +441,31 @@
       
 
       
-        <h3 id="1-保护代理和虚拟代理"><a href="#1-保护代理和虚拟代理" class="headerlink" title="1.保护代理和虚拟代理"></a>1.保护代理和虚拟代理</h3><p>在前面的js学习中，ES6语法里有个proxy对象可以创建一个代理，可以通过代理实现控制不同权限的对象对目标对象的访问，从而实现对一些对象访问的过滤。虚拟代理的意思是，把一些开销大的对象，放在真正需要她的时候去创建。这是为了系统性能和一些特殊需要的考虑。由于js不容易判断是哪个对象访问了目标，所以JavaScript中不容易实现保护模式。常用的还是虚拟代理。</p>
-<h3 id="2-利用虚拟代理实现图片的预加载"><a href="#2-利用虚拟代理实现图片的预加载" class="headerlink" title="2.利用虚拟代理实现图片的预加载"></a>2.利用虚拟代理实现图片的预加载</h3><p>在web开发时，如果给一个图片直接设置一个src属性，常常会因为网络状况的异常导致图片无法正常加载。所以一般刚打开的时候会发现里面都是空白。为了解决这个问题一般就是会用一张预加载的图片占位，异步加载图片。一直等到图片加载完成之后就将其渲染到组件中去。</p>
+        <h3 id="Set的用法"><a href="#Set的用法" class="headerlink" title="Set的用法"></a>Set的用法</h3><p>​    在python语言中，Set实际上是一个新的数据结构名叫集合。正如同数学当中的集合一样，在集合中的所有成员的值都是唯一的，不能有重复。ECMAScript6也仿造了这一点有一个Set数据结构。通常是通过new一个Set类型的对象，然后向里面添加元素。如果有重复他会自动去删除这些相同的元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">[<span class="number">6</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].forEach(<span class="function"><span class="params">num</span> =&gt;</span>s.add(num));</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br></pre></td></tr></table></figure>
+<p>​    Set函数可以接受一个数组，或者是具有Iterable接口的其他数据结构皆可。最为其参数。然后用来初始化这个数据结构。同时在Set中添加值的时候不会进行变量的强制转化，5和”5”不是同一个值。同时NaN在这里被认为和其自生是相等的。但是，两个对象总是被认为是不相等的，比如两个空对象之间是不等的。使用Array.from方法可以将Set数据结构转换为常见的数组类型，这样也就实现了数组去重的功能。</p>
+<blockquote>
+<p>Set数据结构可以有四个遍历成员的方法可供选择，具体就是：</p>
+<ul>
+<li>keys()：返回键名遍历器</li>
+<li>values()：返回键值的遍历器</li>
+<li>entries()：返回键值对的遍历器</li>
+<li>forEach()：利用定义的回调函数进行对成员的遍历。</li>
+</ul>
+</blockquote>
+<p>​    由于Set没有键值对，所以其实keys()和values()返回的内容完全相等。entries()返回的键值对两个成员也是相等的。</p>
+<h3 id="WeakSet的用法"><a href="#WeakSet的用法" class="headerlink" title="WeakSet的用法"></a>WeakSet的用法</h3><p>WeakSet和Set类似，也是不重复值的集合，但是它和Set有以下的区别：</p>
+<ol>
+<li>WeakSet的成员必须是一个对象，不能是其他类型的值。</li>
+<li>WeakSet中的对象都是弱类型的，因此在垃圾回收的时候是不会考虑WeakSet的引用问题。这是因为在垃圾回收的时候，机制是依赖于引用一个计数，从而判断当前这个变量被多少对象引用。如果这个值为0，垃圾回收机制就不会释放这块内存。这时候会存在一个问题，就是在垃圾回收的时候忘记取消对回收变量的引用，从而内存不能被释放，进而导致内存泄露。而WeakSet就不会存在这样的问题。他适合临时存放一组对象，并且存放跟这个对象绑定有关的信息。如果这个对象已经没有其他的引用，就会直接从WeakSet中消失。因此，WeakSet中变量的数量是取决于垃圾回收机制的运行，由于垃圾回收机制是不可预测的，所以ES6中不允许对WeakSet进行遍历。</li>
+</ol>
+<h3 id="Map的用法："><a href="#Map的用法：" class="headerlink" title="Map的用法："></a>Map的用法：</h3><p>在传统的语法中，JS的对象是键值对的集合，但是一般只能是字符串当作键来使用。为了解决这个问题，ES6提供了一个名为Map的数据结构，这里键可以是各种类型的值，包括类。</p>
+<p>同时Map中接受数组作为参数，并读取相关的信息，其实任何具有Iterator接口，且成员一双元素出现的数据结构都可以作为Map构造函数的参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = [</span><br><span class="line">    [<span class="string">'name'</span>,<span class="string">'liming'</span>],</span><br><span class="line">    [<span class="string">'sex'</span>,<span class="string">'man'</span>]</span><br><span class="line">]</span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(items);</span><br><span class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'name'</span>))</span><br><span class="line"><span class="keyword">const</span> m2 = <span class="keyword">new</span> <span class="built_in">Map</span>(map)</span><br><span class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'name'</span>))</span><br></pre></td></tr></table></figure>
+<p>​    需要注意的是，只有对同一个对象的引用，Map才会将他们视作为同一个键，否则即使他们的名称一样，但内存地址不同也不能视为是同一个键。下面的这个例子说明了这个问题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"><span class="keyword">const</span> k1 = [<span class="string">'aa'</span>]</span><br><span class="line"><span class="keyword">const</span> k2 = [<span class="string">'aa'</span>]</span><br><span class="line">map.set([<span class="string">'bb'</span>],<span class="number">123</span>)</span><br><span class="line"><span class="built_in">console</span>.log(map.get([<span class="string">'bb'</span>]))</span><br><span class="line"></span><br><span class="line">map.set(k1,<span class="number">123</span>)</span><br><span class="line"><span class="built_in">console</span>.log(map.get(k1))</span><br><span class="line">map.set(k2,<span class="number">456</span>)</span><br><span class="line"><span class="built_in">console</span>.log(map.get(k2))</span><br></pre></td></tr></table></figure>
+<p>这样也就就觉了同名的问题，只要地址不一样，就视为不同的两个属性。</p>
+<p>当然，如果map的键是一个普通的简单值二点时候，只要两个严格相等，依然是视为同一个键。</p>
 
       
     </div>
@@ -459,14 +481,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript设计模式/" rel="tag"># JavaScript设计模式</a>
-          
-            <a href="/tags/虚拟代理/" rel="tag"># 虚拟代理</a>
-          
-        </div>
-      
 
       
       
@@ -476,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/04/懒加载与预加载/" rel="next" title="懒加载与预加载">
-                <i class="fa fa-chevron-left"></i> 懒加载与预加载
+              <a href="/2018/11/06/web缓存机制/" rel="next" title="标签">
+                <i class="fa fa-chevron-left"></i> 标签
               </a>
             
           </div>
@@ -486,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/04/title js迭代器模式/" rel="prev" title="js迭代器模式">
-                js迭代器模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/12/Webpack个人总结/" rel="prev" title="Webpack个人总结">
+                Webpack个人总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -645,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-保护代理和虚拟代理"><span class="nav-number">1.</span> <span class="nav-text">1.保护代理和虚拟代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-利用虚拟代理实现图片的预加载"><span class="nav-number">2.</span> <span class="nav-text">2.利用虚拟代理实现图片的预加载</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set的用法"><span class="nav-number">1.</span> <span class="nav-text">Set的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WeakSet的用法"><span class="nav-number">2.</span> <span class="nav-text">WeakSet的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map的用法："><span class="nav-number">3.</span> <span class="nav-text">Map的用法：</span></a></li></ol></div>
             
 
           </div>
