@@ -95,17 +95,19 @@
 
 
 
-<meta name="description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
+<meta name="description" content="快速排序算法简介​    快速排序也是一种分治的思想，和归并排序是互补的。归并排序是先进行递归操作之后在进行归并排序，而快速排序算法是先进行排序后递归操作。归并排序的时候，一般切分的位置恰好在数组的中心位置，但是快速排序的切分的位置是取决于数据的内容。 简单的思路​    快速排序的思路是随机的取a[lo]为划分元素，之后指定两个左指针i和右指针j分别指向a[lo]以及数组的最后一个元素的下一个元">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js——Vuex相关用法">
-<meta property="og:url" content="http://yoursite.com/2018/11/03/hello-world/index.html">
+<meta property="og:title" content="前端菜鸡的算法——排序算法总结">
+<meta property="og:url" content="http://yoursite.com/2018/11/17/排序算法总结/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
+<meta property="og:description" content="快速排序算法简介​    快速排序也是一种分治的思想，和归并排序是互补的。归并排序是先进行递归操作之后在进行归并排序，而快速排序算法是先进行排序后递归操作。归并排序的时候，一般切分的位置恰好在数组的中心位置，但是快速排序的切分的位置是取决于数据的内容。 简单的思路​    快速排序的思路是随机的取a[lo]为划分元素，之后指定两个左指针i和右指针j分别指向a[lo]以及数组的最后一个元素的下一个元">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-07T17:07:14.838Z">
+<meta property="og:image" content="c:/Users/lenovo/AppData/Roaming/Typora/typora-user-images/1542441375905.png">
+<meta property="og:updated_time" content="2018-11-17T09:52:22.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js——Vuex相关用法">
-<meta name="twitter:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
+<meta name="twitter:title" content="前端菜鸡的算法——排序算法总结">
+<meta name="twitter:description" content="快速排序算法简介​    快速排序也是一种分治的思想，和归并排序是互补的。归并排序是先进行递归操作之后在进行归并排序，而快速排序算法是先进行排序后递归操作。归并排序的时候，一般切分的位置恰好在数组的中心位置，但是快速排序的切分的位置是取决于数据的内容。 简单的思路​    快速排序的思路是随机的取a[lo]为划分元素，之后指定两个左指针i和右指针j分别指向a[lo]以及数组的最后一个元素的下一个元">
+<meta name="twitter:image" content="c:/Users/lenovo/AppData/Roaming/Typora/typora-user-images/1542441375905.png">
 
 
 
@@ -135,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/03/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/17/排序算法总结/">
 
 
 
 
 
-  <title>js——Vuex相关用法 | SweetaMily</title>
+  <title>前端菜鸡的算法——排序算法总结 | SweetaMily</title>
   
 
 
@@ -316,12 +318,12 @@
   
   
 
-  <article class="post post-type-Vue" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/排序算法总结/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -338,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js——Vuex相关用法</h1>
+          <h1 class="post-title" itemprop="name headline">前端菜鸡的算法——排序算法总结</h1>
         
 
         <div class="post-meta">
@@ -350,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T12:39:04+08:00">
-                2018-11-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T15:00:00+08:00">
+                2018-11-17
               </time>
             
 
@@ -360,6 +362,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构与算法分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -382,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  773字
+                  1.5k字
                 </span>
               
 
@@ -398,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3分钟
+                  5分钟
                 </span>
               
             </div>
@@ -419,29 +443,32 @@
       
 
       
-        <p>js——Vuex相关用法</p>
-<p>平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。</p>
-<p>Vuex的基本用法：</p>
-<p>首先通过NPM安装Vuex：</p>
-<p>npm install –save vuex</p>
-<p>在main.js中通过Vue.use()使用Vuex：</p>
-<p>store包含了应用的数据（状态）和操作过程。任何组件使用同一store的操作的数据时，只要store的数据发生变化，对应的组件也会立刻更新。</p>
-<p>在任何组件内，可以直接通过$store.state.count 读取这个数据： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;$store.state.count&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button @click="handleIncrement"&gt;+1&lt;/</span>button&gt;</span><br><span class="line">    &lt;button @click=<span class="string">"handleDecrease"</span>&gt;<span class="number">-1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: 'HelloWorld',</span></span><br><span class="line"><span class="regexp">  data () &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      msg: 'Welcome to Your Vue.js App'</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods:&#123;</span></span><br><span class="line"><span class="regexp">    handleIncrement () &#123;</span></span><br><span class="line"><span class="regexp">      this.$store.commit('increment');</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    handleDecrease () &#123;</span></span><br><span class="line"><span class="regexp">      this.$store.commit('decrease');</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
-<p>当然，以上$store.state.count亦可以换成count，然后后面加上：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">    count()&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>在组件内，来自store的数据只能读取，不能手动改变，改变store数据的唯一途径就是显式的提交mutatations。他是Vuex的第二个选项，用来直接修改state里的数据。</p>
-<p>Vuex还有其他的三个选项可以使用：getters、actions、modules。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">getters:&#123;</span><br><span class="line">    getNum:<span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> state.list.filter(<span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">10</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    listCount:<span class="function">(<span class="params">state,getters</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> getters.getNum.length;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//.vue文件中</span></span><br><span class="line">computed:&#123;</span><br><span class="line">    count()&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;,</span><br><span class="line">    listCount () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.listCount;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>这里，getter也可以依赖于其他的getter，把getter作为第二个参数。如上例中的listCount。</p>
-<p>注意的是，mutation里面不应该出现异步操作的数据，因此有了actions，他和mutation很像，但是提交的是mutation，并且可以异步操作业务逻辑。</p>
-<p>action在组件中通过$store.dispatch触发，例如使用action加一：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line">actions:&#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      context.commit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="comment">//.vue</span></span><br><span class="line"> methods:&#123;</span><br><span class="line">    handleIncrement () &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">'increment'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    handleDecrease () &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">'decrease'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>下面是处理异步操作的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line">actions:&#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">          context.commit(<span class="string">'increment'</span>);</span><br><span class="line">          resolve();</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//.vue</span></span><br><span class="line">   methods:&#123;</span><br><span class="line">    handleIncrement () &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">'increment'</span>).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$store.state.count)</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    handleDecrease () &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">'decrease'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>mutation和actions看起来很相似，但一般涉及改变数据的时候用Vue，存在业务逻辑的时候用actions。</p>
-<p>最后一个是module，主要是用来将store分割到不同的模块，微地就是让main.js中的store看起来更友好。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> moduleA = &#123;</span><br><span class="line">  state:&#123;</span><br><span class="line">    count:<span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations:&#123;</span><br><span class="line">    hello()&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'hello'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> moduleB = &#123;</span><br><span class="line">  state:&#123;</span><br><span class="line">    count:<span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations:&#123;</span><br><span class="line">    get(state)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'state='</span> + state.count)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules:&#123;</span><br><span class="line">    a:moduleA,</span><br><span class="line">    b:moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        <h3 id="快速排序算法"><a href="#快速排序算法" class="headerlink" title="快速排序算法"></a>快速排序算法</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>​    快速排序也是一种分治的思想，和归并排序是互补的。归并排序是先进行递归操作之后在进行归并排序，而快速排序算法是先进行排序后递归操作。归并排序的时候，一般切分的位置恰好在数组的中心位置，但是快速排序的切分的位置是取决于数据的内容。</p>
+<h4 id="简单的思路"><a href="#简单的思路" class="headerlink" title="简单的思路"></a>简单的思路</h4><p>​    快速排序的思路是随机的取<code>a[lo]为划分元素，之后指定两个左指针</code>i和右指针<code>j分别指向</code>a[lo]以及数组的最后一个元素的下一个元素。然后开始左指针扫描，遇到比<code>a[lo]大的元素就停止，右指针开始从后往前扫描，遇到比</code>a[lo]小的元素就停止。然后左右指针指向的那个两个数相互交换位置，左指针又开始扫描，重复以上的过程，直到两个指针相遇为止。这样的话，所有在左指针的元素都比a[lo]小，在<code>a[lo]右边的元素都比他大。最后再交换</code>a[j]和`a[lo]，本次的整个过程排序完毕。接下来就是要把a[i]两边的数进行递归排序，直到递归到只剩一个数。</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1542441375905.png" alt="1542441375905"></p>
+<p>​    这是第四版算法对于整个快速排序的过程图示，其中，j代表了在每一次递归排序的结束的时候和a[lo]交换位置的那个数的地址。并且在每次排序的时候，大小为1的子数组由于lo == hi所以不进行排序。</p>
+<h4 id="代码的实现"><a href="#代码的实现" class="headerlink" title="代码的实现"></a>代码的实现</h4><p>接下来是对上述算法的代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> QuickSort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">        sort(a,<span class="number">0</span>,a.length-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> lo,<span class="keyword">int</span> hi)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hi &lt;= lo)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> j = partition(a,lo,hi);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> lo,<span class="keyword">int</span> hi)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = lo,j = hi + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v = a[lo];</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(a[++i] &lt; v)</span><br><span class="line">                <span class="keyword">if</span> (i &gt;= hi)</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">while</span>(a[--j] &gt; v)&#123;</span><br><span class="line">                <span class="keyword">if</span> (j &lt;= lo)&#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= j) <span class="keyword">break</span>;</span><br><span class="line">            exchange(a,i,j);</span><br><span class="line">        &#125;</span><br><span class="line">        exchange(a,lo,j);</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exchange</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = a[i];</span><br><span class="line">        a[i] = a[j];</span><br><span class="line">        a[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] =&#123;<span class="number">5</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        Quick.sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length;i++)</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h4><p>​    快速排序算法相较于希尔排序算法和归并排序算法而言，其优势在于进行的时候主要是在和一个数进行比较，在内循环中不需要太多的移动。其次就是快排得到比较次数相较于其他的两个算法而言少了很多。排序的效率取决于划分的位置，接下来我们将要来探讨这个算法的时间复杂度的影响。</p>
+<p>​    理想的情况下，快排的时间复杂度最好是每次划分的时候划分点正好位于数组的中心，即正好能够将整个数组对半分。这个时候快排的比较次数正好满足分治递归的$$C_n=2C_N/_2+N$$。那么这个时候$$C_N~Nlg_n$$.但是，并不是所有的情况都能使划分点恰好落在中心位置，这种情况总是以一定的概率出现的，这就需要我们去计算这个算法的平均消耗代价。</p>
+<blockquote>
+<p>​    结论：长度为N的无重复数组排序，快排平均需要$$~2NlnN$$次比较。这里是根据相关的数学推导得到的，具体的推导过程在算法第四版的186页，这里不做深入的探究</p>
+</blockquote>
+<h4 id="快排的改进算法"><a href="#快排的改进算法" class="headerlink" title="快排的改进算法"></a>快排的改进算法</h4><p>快排最糟糕的情况，无非就是当数组划分的时候不均匀，尤其是如果一个数组顺序的时候，可能会出现一边的数组总是空的的情况，这个时候的时间复杂度：    </p>
+<p>​    $$N+(N-1)+(N-2)+….+2+1=(N+1)N/2$$    </p>
+<p>​    也就是说算法比较的次数约在$$N^2/2$$这个级别上。这是一种相当糟糕的情况，但是可以将待排的数组打乱，这样将会把比较次数降低很多。</p>
+<h5 id="切换插入排序"><a href="#切换插入排序" class="headerlink" title="切换插入排序"></a>切换插入排序</h5><p>​    通过实验发现，在数据量很小的情况下，快速排序的性能不如插入排序，所以我们可以考虑在快速排序到小数组的时候利用插入排序来解决排序问题。这样可以明显提升。一般可以把代码中的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (hi &lt;= lo)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>更改为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (hi &lt;= lo + M)&#123;</span><br><span class="line">     insertSort(a,lo,hi)；</span><br><span class="line">     <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="三取样划分"><a href="#三取样划分" class="headerlink" title="三取样划分"></a>三取样划分</h5><p>​    我们也可以通过三取样划分来提升性能。这时候实际上是将数组划分为了三部分，并设置了三个指针<code>lt,</code>i和<code>gt。</code>a[<code>lo...</code>lt-1]是小于当前比较的数，a[`lt…i-1]一部分是等于当前比较的数，a[i…gt]一部分是不确定的元素，a[gt+1…hi]大于当前比较的数。初始化的时候，首先将lt置为lo，将i置为lo+1，将gt置为hi，之后开始进行比较。如果：</p>
+<blockquote>
+<p>a[i]小于v，将a[lt]和a[i]交换，并将lt和i加一</p>
+<p>a[i]大于v，将a[gt]和a[i]交换，将gt减一</p>
+<p>a[i]等于v，将i加一</p>
+</blockquote>
+<p>具体的代码见下面所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">threeQuick</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> lo,<span class="keyword">int</span> hi)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hi &lt;= lo) <span class="keyword">return</span> ;</span><br><span class="line">        <span class="keyword">int</span> lt = lo,i = lo + <span class="number">1</span>,gt = hi;</span><br><span class="line">        <span class="keyword">int</span> v = a[lo];</span><br><span class="line">        <span class="keyword">while</span>(i &lt;= gt)&#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt; v)&#123;</span><br><span class="line">                exchange(a,gt,i);</span><br><span class="line">                gt--;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(a[i] &lt; v)&#123;</span><br><span class="line">                exchange(a,lt,i);</span><br><span class="line">                i++;</span><br><span class="line">                lt++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        threeQuick(a,lo,lt - <span class="number">1</span>);</span><br><span class="line">        threeQuick(a,gt + <span class="number">1</span>,hi);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -466,8 +493,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/22/前端11_2笔记——webpack/" rel="next" title="webpack">
-                <i class="fa fa-chevron-left"></i> webpack
+              <a href="/2018/11/12/Webpack个人总结/" rel="next" title="Webpack个人总结">
+                <i class="fa fa-chevron-left"></i> Webpack个人总结
               </a>
             
           </div>
@@ -476,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/03/title computed和watch/" rel="prev" title="组件的继承">
-                组件的继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/19/设计模式之观察者模式/" rel="prev" title="js异步编程——async的用法">
+                js异步编程——async的用法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -530,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -548,7 +584,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -559,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -616,6 +652,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序算法"><span class="nav-number">1.</span> <span class="nav-text">快速排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的思路"><span class="nav-number">1.2.</span> <span class="nav-text">简单的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码的实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析"><span class="nav-number">1.4.</span> <span class="nav-text">算法分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快排的改进算法"><span class="nav-number">1.5.</span> <span class="nav-text">快排的改进算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#切换插入排序"><span class="nav-number">1.5.1.</span> <span class="nav-text">切换插入排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三取样划分"><span class="nav-number">1.5.2.</span> <span class="nav-text">三取样划分</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

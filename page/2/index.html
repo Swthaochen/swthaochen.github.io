@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js——闭包问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js代理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -338,7 +338,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/04/js——闭包问题/" itemprop="url">js代理</a></h1>
+                <a class="post-title-link" href="/2018/11/04/js代理/" itemprop="url">js代理</a></h1>
         
 
         <div class="post-meta">
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  556字
+                  1.7k字
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  6分钟
                 </span>
               
             </div>
@@ -443,12 +443,23 @@
       
         
           
-          js——闭包问题一、理解闭包首先根据下面的例子来理解闭包的概念：
-1234567891011121314151617var ourVar = 'liming'var later;function outerTest()&#123;    var inner = 'haha';    function innerTest()&#123;        console.log(inner);        console.log(ourVar)    &#125;    later = innerTest;&#125;outerTest();later();//运行的结果是：//haha//lim
+          
+1.使用代理控制访问
+2.使用代理的优化代码
+2.1简单的说明
+2.2node中运行代码的不同探究
+2.3原因解释
+
+
+
+1、使用代理控制访问
+
+​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。
+1234567891011121314151617181920212223242526272829303132const people = &#123;    name:'liming
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/04/js——闭包问题/#more" rel="contents">
+            <a class="btn" href="/2018/11/04/js代理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -501,7 +512,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js模式——基本技巧/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js实现继承/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -520,7 +531,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/04/js模式——基本技巧/" itemprop="url">js代理</a></h1>
+                <a class="post-title-link" href="/2018/11/04/js实现继承/" itemprop="url">js实现继承</a></h1>
         
 
         <div class="post-meta">
@@ -586,7 +597,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  380字
+                  1k字
                 </span>
               
 
@@ -602,7 +613,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  4分钟
                 </span>
               
             </div>
@@ -625,19 +636,376 @@
       
         
           
-          js模式——基本技巧反模式：暗示全局变量12
-这里并没有对result进行定义，但是依然可以对result进行赋值和访问。只是因为在这里使用了反模式，暗示全局变量。这里没有用var定义的话result就是一个全局变量。
-带有var声明的原型链：var a = b = 0;在这个语句中，a是局部变量，b是全局变量。
-变量释放时的副作用隐含全局变量和明确定义的全局变量有一定差别，体现在能否使用delete操作符删除变量：
-
-使用var创建的全局变量（这类变量在函数外部创建）不能删除
-不使用var创建的隐含全局变量（尽管他是在函数内部创建的）可以删除
-
-可以看出实际上隐含全局变量实际上并不是真正的变
+          js实现继承一、尝试实现原型继承
+123456789101112function Person()&#123;&#125;Person.prototype.dance = function()&#123;&#125;;function Ninja()&#123;&#125;Ninja.prototype = new Person();const ninja = new Ninja();console.log(ninja instanceof Ninja);	//trueconsole.log(ninja instanceof Person)	//trueconsole.log(ninja in
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/04/js模式——基本技巧/#more" rel="contents">
+            <a class="btn" href="/2018/11/04/js实现继承/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js生成器和promise/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/04/js生成器和promise/" itemprop="url">生成器和Promise</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
+                2018-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript高级特性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          一、生成器函数类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示：
+123456789function* myGenertor()&#123;   yield 'test1';   yield 'test2';   yield 'test3';&#125;for(let aa of myGenertor())&#123;   console.log(aa)&#125;
+最后，这个程序依次输出的是test1.test2和test3，这也是JavaScript的一个生成器。在定义函数的时候在function后面加一个*表示这是一个生成器函数，并通过关键字yield返回相应的值
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/04/js生成器和promise/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/原型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/04/原型/" itemprop="url">js原型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
+                2018-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript高级特性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  773字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          一、理解原型12345678910111213141516171819let obj1 = &#123;    test1:'test1'&#125;;let obj2 = &#123;    test2 : 'test2'&#125;;let obj3 = &#123;    test3 : 'test3'&#125;;console.log(obj1.test2)Object.setPrototypeOf(obj1,obj2);console.log(obj1.test2)Object.setPrototypeOf(obj2,obj3);console.log(obj1.test3)//运
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/04/原型/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1201,8 +1569,6 @@
       
     
     
-    
-    
       
 
   
@@ -1216,7 +1582,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/js——Vuex相关用法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -1235,7 +1601,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/03/hello-world/" itemprop="url">js——Vuex相关用法</a></h1>
+                <a class="post-title-link" href="/2018/11/03/js——Vuex相关用法/" itemprop="url">js——Vuex相关用法</a></h1>
         
 
         <div class="post-meta">
@@ -1329,7 +1695,7 @@ store包含了应用的数据（状态）和操作过程。任何组件使用同
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/03/hello-world/#more" rel="contents">
+            <a class="btn" href="/2018/11/03/js——Vuex相关用法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1367,6 +1733,8 @@ store包含了应用的数据（状态）和操作过程。任何组件使用同
 
 
       
+    
+    
     
     
       
@@ -1609,7 +1977,7 @@ store包含了应用的数据（状态）和操作过程。任何组件使用同
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1620,7 +1988,7 @@ store包含了应用的数据（状态）和操作过程。任何组件使用同
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
