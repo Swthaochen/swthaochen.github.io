@@ -102,12 +102,12 @@
 <meta property="og:site_name" content="SweetaMily">
 <meta property="og:description" content="​    之前学习webpack由于版本问题以及学习的知识比较零散，所以走过很多弯路，现在通过自己一些编程的实践和看相关的书籍博客，来总结下相关的知识点。主要还是为了再熟悉一下webpack相关的打包流程，以及这种模块化的思维。也是对Vue，react这种框架的一种更加深入的理解。 ​    首先新建一个webpack的空文件，然后按照流程先npm init，代表的是新建一个package.jso">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/lenovo/AppData/Roaming/Typora/typora-user-images/1542031492627.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/12/Webpack个人总结/C:/Users/lenovo/AppData/Roaming/Typora/typora-user-images/1542031492627.png">
 <meta property="og:updated_time" content="2018-11-12T14:57:07.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack个人总结">
 <meta name="twitter:description" content="​    之前学习webpack由于版本问题以及学习的知识比较零散，所以走过很多弯路，现在通过自己一些编程的实践和看相关的书籍博客，来总结下相关的知识点。主要还是为了再熟悉一下webpack相关的打包流程，以及这种模块化的思维。也是对Vue，react这种框架的一种更加深入的理解。 ​    首先新建一个webpack的空文件，然后按照流程先npm init，代表的是新建一个package.jso">
-<meta name="twitter:image" content="c:/Users/lenovo/AppData/Roaming/Typora/typora-user-images/1542031492627.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/12/Webpack个人总结/C:/Users/lenovo/AppData/Roaming/Typora/typora-user-images/1542031492627.png">
 
 
 
@@ -470,7 +470,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isDev = process.env.NODE_ENV === <span class="string">'development'</span></span><br></pre></td></tr></table></figure>
 <p>然后下面根据当前环境判断是否启动：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isDev) &#123;</span><br><span class="line">    config.devtool = <span class="string">'#cheap-module-eval-source-map'</span>  <span class="comment">//帮助在页面上调试代码, 优化显示  </span></span><br><span class="line">    config.devServer = &#123;</span><br><span class="line">        port: <span class="number">8088</span>,</span><br><span class="line">        <span class="comment">//host 可以通过localhost进行访问，同时也可以通过本机的内网id进行访问，就能够在别的网页或者手机上访问</span></span><br><span class="line">        host:<span class="string">'0.0.0.0'</span>,</span><br><span class="line">        <span class="comment">//overlay 编译过程有任何错误都直接显示到网页上</span></span><br><span class="line">        overlay: &#123;</span><br><span class="line">            errors: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 当修改组件代码时，只重新渲染当前组件，不会让整个页面重新加载；hot启动后要添加以下两个插件</span></span><br><span class="line">        hot: <span class="literal">true</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 能够在运行后直接打开浏览器</span></span><br><span class="line">        <span class="comment">// open: true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 启动webpack.hot功能的插件</span></span><br><span class="line">    config.plugins.push(</span><br><span class="line">        <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(), <span class="comment">//启动hot功能</span></span><br><span class="line">        <span class="keyword">new</span> webpack.NoEmitOnErrorsPlugin()    <span class="comment">//减少不需要信息的提示  </span></span><br><span class="line">        )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这时候运行npm run dev就能正常启动服务器了，但是这样显示出来的只是一个这样的页面：<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1542031492627.png" alt="1542031492627"></p>
+<p>这时候运行npm run dev就能正常启动服务器了，但是这样显示出来的只是一个这样的页面：<img src="/2018/11/12/Webpack个人总结/C:/Users\lenovo\AppData\Roaming\Typora\typora-user-images\1542031492627.png" alt="1542031492627"></p>
 <p>说明我们还没有一个初始化的HTML文件。所以为了让webpack-server有一个默认的页面，我们再用一个插件来快速生成：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HtmlwebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="comment">//....</span></span><br><span class="line">plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlwebpackPlugin(&#123;</span><br><span class="line">            title: <span class="string">'Hello World app'</span></span><br><span class="line">        &#125;)<span class="comment">//在build目录下自动生成index.html，指定其title</span></span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
 <p>这时候通过npm run build我们其实可以看见在dist里面生成了一个index.html文件，里面是这样的：</p>
@@ -582,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

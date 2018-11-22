@@ -13,8 +13,8 @@
 <meta name="theme-color" content="#222">
 <script>
     (function(){
-        if('123456'){
-            if (prompt('请输入文章密码') !== '123456'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 history.back();
             }
@@ -84,7 +84,7 @@
 
 
 
-  <meta name="keywords" content="vue基础知识,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -95,18 +95,16 @@
 
 
 
-<meta name="description" content="1、组件的继承 通过组件的继承我们可以利用已定义的组件的一些特性。首先先看第一种定义的方式： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import Vue from &apos;vue&apos;const component = &amp;#123;    // props:[&apos;acti">
-<meta name="keywords" content="vue基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="组件的继承">
-<meta property="og:url" content="http://yoursite.com/2018/11/03/title computed和watch/index.html">
+<meta property="og:title" content="从Url到页面加载的前端知识梳理">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="1、组件的继承 通过组件的继承我们可以利用已定义的组件的一些特性。首先先看第一种定义的方式： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import Vue from &apos;vue&apos;const component = &amp;#123;    // props:[&apos;acti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-04T06:31:54.998Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/1.JPG">
+<meta property="og:updated_time" content="2018-11-22T14:22:05.368Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="组件的继承">
-<meta name="twitter:description" content="1、组件的继承 通过组件的继承我们可以利用已定义的组件的一些特性。首先先看第一种定义的方式： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849import Vue from &apos;vue&apos;const component = &amp;#123;    // props:[&apos;acti">
+<meta name="twitter:title" content="从Url到页面加载的前端知识梳理">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/1.JPG">
 
 
 
@@ -136,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/03/title computed和watch/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/">
 
 
 
 
 
-  <title>组件的继承 | SweetaMily</title>
+  <title>从Url到页面加载的前端知识梳理 | SweetaMily</title>
   
 
 
@@ -322,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/title computed和watch/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -339,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">组件的继承</h1>
+          <h1 class="post-title" itemprop="name headline">从Url到页面加载的前端知识梳理</h1>
         
 
         <div class="post-meta">
@@ -351,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T12:39:04+08:00">
-                2018-11-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T22:17:35+08:00">
+                2018-11-22
               </time>
             
 
@@ -361,28 +359,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -405,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k字
+                  0字
                 </span>
               
 
@@ -421,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4分钟
+                  1分钟
                 </span>
               
             </div>
@@ -442,27 +418,7 @@
       
 
       
-        <p>1、组件的继承</p>
-<p>通过组件的继承我们可以利用已定义的组件的一些特性。首先先看第一种定义的方式：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">const</span> component = &#123;</span><br><span class="line">    <span class="comment">// props:['active','propOne','onChange'],</span></span><br><span class="line">    props:&#123;</span><br><span class="line">        active:<span class="built_in">Boolean</span>,</span><br><span class="line">        propOne:&#123;</span><br><span class="line">            <span class="built_in">require</span>:<span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;   </span></span><br><span class="line"><span class="string">        &lt;input type="text" v-model="text"&gt;</span></span><br><span class="line"><span class="string">        &lt;span @click="handleChange"&gt;&#123;&#123;propOne&#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;span  v-show="active"&gt;show&lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            text:<span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'comp instance'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        handleChange()&#123;</span><br><span class="line">            <span class="comment">//this.onChange()</span></span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'change'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> CompVue = Vue.extend(component)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> CompVue(&#123;</span><br><span class="line">    el:<span class="string">'#root'</span>,</span><br><span class="line">    propsData:&#123;</span><br><span class="line">        propOne:<span class="number">123</span>,</span><br><span class="line">        active:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            text:<span class="number">123</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'this instance'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>​    在这个里面，CompVue继承了名为component这样的一个组件，并且在里面实现了自己的一些方法。首先，如果这个时候需要和被继承组件中的子组件通信的时候，需要利用propsData进行传递，利用原来的props是没有效果的。然后就是在继承的组件当中，data会自动覆盖掉原先的data。但是对于mounted而言是不会被覆盖的，而是先执行被继承对象中的mounted方法，再调用自己的mounted方法。</p>
-<p>当然，还有一种定义继承的方式：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> comp2 = &#123;</span><br><span class="line">    extends:component,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            text:<span class="number">555</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#root'</span>,</span><br><span class="line">    components:&#123;</span><br><span class="line">        comp:comp2</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`&lt;comp&gt;&lt;/comp&gt;`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="二、组件的parent"><a href="#二、组件的parent" class="headerlink" title="二、组件的parent"></a>二、组件的parent</h3><p>利用$parent这个变量可以找到一个组件的父组件，并且通过this. $parent.$options.name可以查到他父组件的名字。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const comp2 = &#123;</span><br><span class="line">    extends:component,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            text:555</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        console.log(this.$parent.$options.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">    name:&apos;myTest&apos;,</span><br><span class="line">    el:&apos;#root&apos;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        comp:comp2</span><br><span class="line">    &#125;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            text:2333</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    template:`</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;span&gt;&#123;&#123;text&#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;comp&gt;&lt;/comp&gt;</span><br><span class="line">    &lt;/div&gt;`</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>当然，也可以通过$parent来改变响应的值。但是尽量不要去这样做。父组件也是可以进行设置的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> parent = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    name:<span class="string">'parent'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> comp2 = &#123;</span><br><span class="line">    parent:parent,</span><br><span class="line">    extends:component,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            text:<span class="number">555</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$parent.$options.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样声明是没有用的，结果还将是parent为调用该组件的名称，这时候想要定义父组件必须在new一个Vue的时候声明才有效果。</p>
-<p>接下来看一个多层调用的例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">const</span> childComponents = &#123;</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;child child  &#123;&#123;value&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">    inject:[<span class="string">'yeye'</span>,<span class="string">'value'</span>],</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.yeye)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> component = &#123;</span><br><span class="line">    props:&#123;</span><br><span class="line">        active:<span class="built_in">Boolean</span>,</span><br><span class="line">        propOne:&#123;</span><br><span class="line">            <span class="built_in">require</span>:<span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            text:<span class="number">0</span>,</span><br><span class="line">            style:&#123;</span><br><span class="line">                width:<span class="string">'200px'</span>,</span><br><span class="line">                height:<span class="string">'200px'</span>,</span><br><span class="line">                border:<span class="string">'1px black solid'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'comp instance'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        childComponents</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div :style="style"&gt;</span></span><br><span class="line"><span class="string">            &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">            &lt;child-components&gt;&lt;/child-components&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    name:<span class="string">'myTest'</span>,</span><br><span class="line">    el:<span class="string">'#root'</span>,</span><br><span class="line">    components:&#123;</span><br><span class="line">        comp:component</span><br><span class="line">    &#125;,</span><br><span class="line">    provide()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            yeye:<span class="keyword">this</span>,</span><br><span class="line">            value:<span class="keyword">this</span>.value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            text:<span class="number">2333</span>,</span><br><span class="line">            value:<span class="number">222222</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="comment">// console.log(this.$parent.$options.name)</span></span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">        &lt;comp&gt;</span></span><br><span class="line"><span class="string">            &lt;span&gt;&#123;&#123;text&#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;/comp&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" v-model="value"/&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>但是是没有办法访问越级的组件的，这个时候就需要去做一些处理。</p>
-<p>首先在”爷爷辈“的组件中，声明一个provide方法，这样才会在Vue对象初始化的过程中得到里面的值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">provide()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            yeye:<span class="keyword">this</span>,</span><br><span class="line">            value:<span class="keyword">this</span>.value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<p>然后在”孙子辈“里面再去利用inject调用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> childComponents = &#123;</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;child child  &#123;&#123;value&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">    inject:[<span class="string">'yeye'</span>,<span class="string">'value'</span>],</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.yeye)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是这时候，如果在input中输入一个数的话，孙子中绑定的值是不会变化的，这是因为默认情况下provide是不提供Vue的react属性的，可以做下面的处理：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">provide()&#123;</span><br><span class="line">        <span class="keyword">const</span> data = &#123;&#125;</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(data,<span class="string">'value'</span>,&#123;</span><br><span class="line">            get: <span class="function"><span class="params">()</span>=&gt;</span> <span class="keyword">this</span>.value,</span><br><span class="line">            enumerable:<span class="literal">true</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">            yeye:<span class="keyword">this</span>,</span><br><span class="line">            data</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-<p>也就是子组件在每次访问value这个属性的时候，实际上是在访问get方法，然后访问到value值的变化，这也就是Vue实现的一个原理，但是Vue官方文档中可能之后会被移除。</p>
+        <p><img src="/2018/11/22/从Url到页面加载的前端知识梳理/1.JPG" alt="你想输入的替代文字"></p>
 
       
     </div>
@@ -478,12 +434,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/vue基础知识/" rel="tag"># vue基础知识</a>
-          
-        </div>
-      
 
       
       
@@ -493,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/03/js——Vuex相关用法/" rel="next" title="js——Vuex相关用法">
-                <i class="fa fa-chevron-left"></i> js——Vuex相关用法
+              <a href="/2018/11/21/设计模式之策略模式/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -502,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/03/js异步编程——async的用法/" rel="prev" title="js异步编程——async的用法">
-                js异步编程——async的用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,17 +503,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -652,22 +589,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二、组件的parent"><span class="nav-number">1.</span> <span class="nav-text">二、组件的parent</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
