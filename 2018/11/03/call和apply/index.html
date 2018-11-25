@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name=&quot;viewport">
+<meta name="description" content="###1.基本用法 call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apply和call的用法">
 <meta property="og:url" content="http://yoursite.com/2018/11/03/call和apply/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name=&quot;viewport">
+<meta property="og:description" content="###1.基本用法 call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-04T05:09:59.861Z">
+<meta property="og:updated_time" content="2018-11-25T09:09:39.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply和call的用法">
-<meta name="twitter:description" content="call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name=&quot;viewport">
+<meta name="twitter:description" content="###1.基本用法 call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子： 12345678910111213141516171819&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;    &amp;lt;meta name">
 
 
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  688字
+                  693字
                 </span>
               
 
@@ -441,8 +441,9 @@
       
 
       
-        <p>call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"test"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/var getId = document.getElementById;</span></span><br><span class="line"><span class="regexp">var getId = function(id)&#123;</span></span><br><span class="line"><span class="regexp">    return document.getElementById(id);</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">getId('test');</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+        <p>###1.基本用法</p>
+<p>call和apply这两个方法在利用的时候一般是用来修改函数调用时候的this指向的。比如我们看下面的这个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"test"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/var getId = document.getElementById;</span></span><br><span class="line"><span class="regexp">var getId = function(id)&#123;</span></span><br><span class="line"><span class="regexp">    return document.getElementById(id);</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">getId('test');</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里是可以得到id为test的标签的，但是如果将getID换成注释中的那句话的时候，这时候在大多数浏览器中就会报错。这是因为如果在很多浏览器里面，getElementById这个方法内部实现需要this，这个this应该是指向document。当getElementById作为document的属性被调用的时候，方法内部的this确实是指向document的。但如果getId引用了document.getElementById之后，再去调用函数的话，就成了普通的函数调用，函数里面的this就指向了windows而不是document。</p>
 <p>我们可以利用apply来实现这个调用的过程：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById = (<span class="function"><span class="keyword">function</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func.apply(<span class="built_in">document</span>,<span class="built_in">arguments</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)(<span class="built_in">document</span>.getElementById)</span><br><span class="line"><span class="keyword">var</span> getId = <span class="built_in">document</span>.getElementById;</span><br><span class="line">getId(<span class="string">'test'</span>);</span><br></pre></td></tr></table></figure>
@@ -451,12 +452,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">   <span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   func()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，外层的console.log能够正常输出test，但是内部函数输出的却是undefined，这时候如果还想让内部的函数像外部的函数一样正常输出的话，就需要利用apply来调用函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">   <span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   func.call(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.利用Function.prototype.bind来指定函数内部的this</p>
+<p>###2.利用Function.prototype.bind来指定函数内部的this</p>
 <p>大部分的浏览器都实现了Function.prototype.bind这个函数用来指定Function的this指向。下面的这个例子用来模拟这个过程。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> self.apply(context,<span class="built_in">arguments</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   name:<span class="string">"Jone"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;.bind(obj);</span><br><span class="line">func(obj)</span><br></pre></td></tr></table></figure>
 <p>在定义Function.prototype.bind的时候，context就是我们想要修正的this对象。在函数体内，首先我们先用一个self对象将函数的引用保存起来，之后返回一个函数，这个函数就是在我们调用func()的时候被执行的。在函数的内部，self.apply才是执行原来的func函数，并且指定了context是这个函数的this。</p>
-<p>3.借用其他对象的方法 </p>
-
+<h3 id="3-借用其他对象的方法"><a href="#3-借用其他对象的方法" class="headerlink" title="3.借用其他对象的方法"></a>3.借用其他对象的方法</h3>
       
     </div>
     
@@ -480,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/03/js异步编程——async的用法/" rel="next" title="js异步编程——async的用法">
-                <i class="fa fa-chevron-left"></i> js异步编程——async的用法
+              <a href="/2018/11/03/一、computed相关的用法说明/" rel="next" title="computed和watch">
+                <i class="fa fa-chevron-left"></i> computed和watch
               </a>
             
           </div>
@@ -490,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/04/原型/" rel="prev" title="js原型">
-                js原型 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/04/代理模式/" rel="prev" title="js代理">
+                js代理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -544,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -562,7 +571,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -630,6 +639,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-借用其他对象的方法"><span class="nav-number">1.</span> <span class="nav-text">3.借用其他对象的方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

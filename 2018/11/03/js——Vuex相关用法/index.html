@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
+<meta name="description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 ###Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js——Vuex相关用法">
 <meta property="og:url" content="http://yoursite.com/2018/11/03/js——Vuex相关用法/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
+<meta property="og:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 ###Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-07T17:07:14.838Z">
+<meta property="og:updated_time" content="2018-11-25T09:10:54.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js——Vuex相关用法">
-<meta name="twitter:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在mai">
+<meta name="twitter:description" content="js——Vuex相关用法 平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。 ###Vuex的基本用法： 首先通过NPM安装Vuex： npm install –save vuex 在">
 
 
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  773字
+                  781字
                 </span>
               
 
@@ -421,7 +421,7 @@
       
         <p>js——Vuex相关用法</p>
 <p>平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。</p>
-<p>Vuex的基本用法：</p>
+<p>###Vuex的基本用法：</p>
 <p>首先通过NPM安装Vuex：</p>
 <p>npm install –save vuex</p>
 <p>在main.js中通过Vue.use()使用Vuex：</p>
@@ -431,6 +431,7 @@
 <p>当然，以上$store.state.count亦可以换成count，然后后面加上：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">    count()&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>在组件内，来自store的数据只能读取，不能手动改变，改变store数据的唯一途径就是显式的提交mutatations。他是Vuex的第二个选项，用来直接修改state里的数据。</p>
+<p>###相关选项</p>
 <p>Vuex还有其他的三个选项可以使用：getters、actions、modules。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">getters:&#123;</span><br><span class="line">    getNum:<span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> state.list.filter(<span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">10</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    listCount:<span class="function">(<span class="params">state,getters</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> getters.getNum.length;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//.vue文件中</span></span><br><span class="line">computed:&#123;</span><br><span class="line">    count()&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;,</span><br><span class="line">    listCount () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.listCount;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>这里，getter也可以依赖于其他的getter，把getter作为第二个参数。如上例中的listCount。</p>
@@ -440,6 +441,7 @@
 <p>下面是处理异步操作的代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line">actions:&#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">          context.commit(<span class="string">'increment'</span>);</span><br><span class="line">          resolve();</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//.vue</span></span><br><span class="line">   methods:&#123;</span><br><span class="line">    handleIncrement () &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">'increment'</span>).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$store.state.count)</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    handleDecrease () &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">'decrease'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
 <p>mutation和actions看起来很相似，但一般涉及改变数据的时候用Vue，存在业务逻辑的时候用actions。</p>
+<p>###module的用法</p>
 <p>最后一个是module，主要是用来将store分割到不同的模块，微地就是让main.js中的store看起来更友好。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> moduleA = &#123;</span><br><span class="line">  state:&#123;</span><br><span class="line">    count:<span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations:&#123;</span><br><span class="line">    hello()&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'hello'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> moduleB = &#123;</span><br><span class="line">  state:&#123;</span><br><span class="line">    count:<span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations:&#123;</span><br><span class="line">    get(state)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'state='</span> + state.count)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules:&#123;</span><br><span class="line">    a:moduleA,</span><br><span class="line">    b:moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
@@ -466,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/03/一、computed相关的用法说明/" rel="next" title="computed和watch">
-                <i class="fa fa-chevron-left"></i> computed和watch
+              <a href="/2017/02/22/前端11_2笔记——webpack/" rel="next" title="webpack">
+                <i class="fa fa-chevron-left"></i> webpack
               </a>
             
           </div>
@@ -476,8 +478,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/03/title computed和watch/" rel="prev" title="组件的继承">
-                组件的继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/03/js异步编程——async的用法/" rel="prev" title="js异步编程——async的用法">
+                js异步编程——async的用法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +550,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

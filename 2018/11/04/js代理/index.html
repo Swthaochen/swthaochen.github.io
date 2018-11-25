@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="1.使用代理控制访问 2.使用代理的优化代码 2.1简单的说明 2.2node中运行代码的不同探究 2.3原因解释    1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下">
+<meta name="description" content="1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。 123456789101112131415161718192021222324252627282930313">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js代理">
 <meta property="og:url" content="http://yoursite.com/2018/11/04/js代理/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="1.使用代理控制访问 2.使用代理的优化代码 2.1简单的说明 2.2node中运行代码的不同探究 2.3原因解释    1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下">
+<meta property="og:description" content="1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。 123456789101112131415161718192021222324252627282930313">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-04T10:14:08.897Z">
+<meta property="og:updated_time" content="2018-11-25T09:11:24.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js代理">
-<meta name="twitter:description" content="1.使用代理控制访问 2.使用代理的优化代码 2.1简单的说明 2.2node中运行代码的不同探究 2.3原因解释    1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下">
+<meta name="twitter:description" content="1、使用代理控制访问  ​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。 123456789101112131415161718192021222324252627282930313">
 
 
 
@@ -441,16 +441,7 @@
       
 
       
-        <ul>
-<li><a href="#1">1.使用代理控制访问</a></li>
-<li><a href="#1">2.使用代理的优化代码</a><ul>
-<li><a href="#2.1">2.1简单的说明</a></li>
-<li><a href="#2.2">2.2node中运行代码的不同探究</a></li>
-<li><a href="#2.3">2.3原因解释</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="1">1、使用代理控制访问</h2>
+        <h2 id="1">1、使用代理控制访问</h2>
 
 <p>​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = &#123;</span><br><span class="line">    name:<span class="string">'liming'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> father = <span class="keyword">new</span> <span class="built_in">Proxy</span>(people,&#123;</span><br><span class="line">    get:<span class="function">(<span class="params">target,key</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(target[key])</span><br><span class="line">        <span class="keyword">if</span>(key <span class="keyword">in</span> target)</span><br><span class="line">            <span class="keyword">return</span> target[key]</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'The value do not exits'</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    set:<span class="function">(<span class="params">target,key,value</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Something changed'</span>);</span><br><span class="line">        target[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(father.name)</span><br><span class="line">father[<span class="string">'name'</span>] = <span class="string">"mingming"</span></span><br><span class="line"><span class="built_in">console</span>.log(people.name)</span><br><span class="line"><span class="built_in">console</span>.log(father.ta)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行结果</span></span><br><span class="line"><span class="comment">// liming</span></span><br><span class="line"><span class="comment">// liming</span></span><br><span class="line"><span class="comment">// Something changed</span></span><br><span class="line"><span class="comment">// mingming</span></span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// The value do not exits</span></span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
@@ -507,7 +498,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/04/js模式——基本技巧/" rel="next" title="js代理">
+              <a href="/2018/11/04/js——闭包问题/" rel="next" title="js代理">
                 <i class="fa fa-chevron-left"></i> js代理
               </a>
             
@@ -517,8 +508,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/04/CSS性能优化/" rel="prev" title="css性能">
-                css性能 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/04/js生成器和promise/" rel="prev" title="生成器和Promise">
+                生成器和Promise <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -598,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
