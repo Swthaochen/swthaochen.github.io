@@ -84,7 +84,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="前端基础知识,">
 
 
 
@@ -95,16 +95,18 @@
 
 
 
+<meta name="description" content="​    之前在掘金上看了一篇文章，名为《从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！》感觉对整个前端的流程，包括底层的一些工作原理讲的很系统。并融入了很多计算机网路的常识问题。借着给工作室做一次技术分享的机会，我想把相关的知识自己在整理下。 涉及到的知识​    按照文章的整个结构，将整个从Url到页面加载分为以下的几个阶段：   从浏览器接收url到开启网络请求线程（这一">
+<meta name="keywords" content="前端基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从Url到页面加载的前端知识梳理">
 <meta property="og:url" content="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/index.html">
 <meta property="og:site_name" content="SweetaMily">
+<meta property="og:description" content="​    之前在掘金上看了一篇文章，名为《从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！》感觉对整个前端的流程，包括底层的一些工作原理讲的很系统。并融入了很多计算机网路的常识问题。借着给工作室做一次技术分享的机会，我想把相关的知识自己在整理下。 涉及到的知识​    按照文章的整个结构，将整个从Url到页面加载分为以下的几个阶段：   从浏览器接收url到开启网络请求线程（这一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/1.JPG">
-<meta property="og:updated_time" content="2018-11-22T14:22:05.368Z">
+<meta property="og:updated_time" content="2018-11-25T09:22:31.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从Url到页面加载的前端知识梳理">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/22/从Url到页面加载的前端知识梳理/1.JPG">
+<meta name="twitter:description" content="​    之前在掘金上看了一篇文章，名为《从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！》感觉对整个前端的流程，包括底层的一些工作原理讲的很系统。并融入了很多计算机网路的常识问题。借着给工作室做一次技术分享的机会，我想把相关的知识自己在整理下。 涉及到的知识​    按照文章的整个结构，将整个从Url到页面加载分为以下的几个阶段：   从浏览器接收url到开启网络请求线程（这一">
 
 
 
@@ -381,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0字
+                  1k字
                 </span>
               
 
@@ -397,7 +399,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -418,8 +420,50 @@
       
 
       
-        <p><img src="/2018/11/22/从Url到页面加载的前端知识梳理/1.JPG" alt="你想输入的替代文字"></p>
-
+        <p>​    之前在掘金上看了一篇文章，名为《从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！》感觉对整个前端的流程，包括底层的一些工作原理讲的很系统。并融入了很多计算机网路的常识问题。借着给工作室做一次技术分享的机会，我想把相关的知识自己在整理下。</p>
+<h3 id="涉及到的知识"><a href="#涉及到的知识" class="headerlink" title="涉及到的知识"></a>涉及到的知识</h3><p>​    按照文章的整个结构，将整个从Url到页面加载分为以下的几个阶段：</p>
+<blockquote>
+<ol>
+<li>从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）</li>
+<li>开启网络线程到发出一个完整的http请求（这一部分涉及到dns查询，tcp/ip请求，五层因特网协议栈等知识）</li>
+<li>从服务器接收到请求到对应后台接收到请求（这一部分可能涉及到负载均衡，安全拦截以及后台内部的处理等等）</li>
+<li>后台和前台的http交互（这一部分包括http头部、响应码、报文结构、cookie等知识，可以提下静态资源的cookie优化，以及编码解码，如gzip压缩等）</li>
+<li>单独拎出来的缓存问题，http的缓存（这部分包括http缓存头部，etag，catch-control等）</li>
+<li>浏览器接收到http数据包后的解析流程（解析html-词法分析然后解析成dom树、解析css生成css规则树、合并成render树，然后layout、painting渲染、复合图层的合成、GPU绘制、外链资源的处理、loaded和domcontentloaded等）</li>
+<li>CSS的可视化格式模型（元素的渲染规则，如包含块，控制框，BFC，IFC等概念）</li>
+<li>JS引擎解析过程（JS的解释阶段，预处理阶段，执行阶段生成执行上下文，VO，作用域链、回收机制等等）</li>
+<li>其它（可以拓展不同的知识模块，如跨域，web安全，hybrid模式等等内容）</li>
+</ol>
+</blockquote>
+<p>接下来的内容也会参考那篇博客，根据这几个点展开描述。</p>
+<p>###1.从浏览器接收url到开启网络请求线程</p>
+<h4 id="多线程的浏览器"><a href="#多线程的浏览器" class="headerlink" title="多线程的浏览器"></a>多线程的浏览器</h4><p>​    浏览器也像一个操作系统一样，是个多进程的结构，他的每个tag页面都是一个进程，当然远不止这些，这些进程可能还会包括：</p>
+<ul>
+<li>浏览器的主线程，复杂协调、主控</li>
+<li>第三方插件进程：这种第三方的插件一般是一个进程，当然只有在插件被调用的时候被创建。</li>
+<li>GPU进程：最多一个，用于3D绘制</li>
+<li>浏览器的渲染进程（内核）：一般默认每个tab页面一个进程，互不影响，用于页面的渲染和脚本事件的执行。</li>
+</ul>
+<h4 id="多线程浏览器内核"><a href="#多线程浏览器内核" class="headerlink" title="多线程浏览器内核"></a>多线程浏览器内核</h4><p>​    正如操作系统中那样，浏览器的tab是一个进程，同时这个进程可能还会分为多个线程，具体可能有下面的进程：</p>
+<ul>
+<li>GUI线程</li>
+<li>JS引擎线程</li>
+<li>事件触发线程</li>
+<li>定时器线程</li>
+<li>网络请求线程</li>
+</ul>
+<p>这里，js线程是一个线程存在的，所以我们常说js是个单线程的，他是和其他的线程（如时间触发线程，异步请求线程等）并发进行的。</p>
+<h4 id="解析Url"><a href="#解析Url" class="headerlink" title="解析Url"></a>解析Url</h4><p>在输入url确认后，浏览器会对其进行相关的解析，主要从下面的部分进行：</p>
+<ul>
+<li><code>protocol</code>，协议头，譬如有http，ftp等</li>
+<li><code>host</code>，主机域名或IP地址</li>
+<li><code>port</code>，端口号</li>
+<li><code>path</code>，目录路径</li>
+<li><code>query</code>，即查询参数</li>
+<li><code>fragment</code>，即<code>#</code>后的hash值，一般用来定位到某个位置</li>
+</ul>
+<p>之后会根据解析的结果，结合HTTP协议，开辟一个网络线程，生成请求去请求资源。</p>
+<h3 id="开启网络线程到发出一个完整的http请求"><a href="#开启网络线程到发出一个完整的http请求" class="headerlink" title="开启网络线程到发出一个完整的http请求"></a>开启网络线程到发出一个完整的http请求</h3><h4 id="DNS查询"><a href="#DNS查询" class="headerlink" title="DNS查询"></a>DNS查询</h4><h4 id="TCP建立连接和关闭连接"><a href="#TCP建立连接和关闭连接" class="headerlink" title="TCP建立连接和关闭连接"></a>TCP建立连接和关闭连接</h4><h3 id="从服务器接收到请求到对应后台接收到请求"><a href="#从服务器接收到请求到对应后台接收到请求" class="headerlink" title="从服务器接收到请求到对应后台接收到请求"></a>从服务器接收到请求到对应后台接收到请求</h3>
       
     </div>
     
@@ -433,6 +477,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端基础知识/" rel="tag"># 前端基础知识</a>
+          
+        </div>
       
 
       
@@ -503,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -543,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -589,6 +648,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及到的知识"><span class="nav-number">1.</span> <span class="nav-text">涉及到的知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多线程的浏览器"><span class="nav-number">1.1.</span> <span class="nav-text">多线程的浏览器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多线程浏览器内核"><span class="nav-number">1.2.</span> <span class="nav-text">多线程浏览器内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解析Url"><span class="nav-number">1.3.</span> <span class="nav-text">解析Url</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启网络线程到发出一个完整的http请求"><span class="nav-number">2.</span> <span class="nav-text">开启网络线程到发出一个完整的http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS查询"><span class="nav-number">2.1.</span> <span class="nav-text">DNS查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP建立连接和关闭连接"><span class="nav-number">2.2.</span> <span class="nav-text">TCP建立连接和关闭连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从服务器接收到请求到对应后台接收到请求"><span class="nav-number">3.</span> <span class="nav-text">从服务器接收到请求到对应后台接收到请求</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
