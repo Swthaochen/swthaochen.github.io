@@ -84,7 +84,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="原型和原型链,">
 
 
 
@@ -95,13 +95,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="SweetaMily">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+<meta name="description" content="一、对原型的引入​    在每一个JavaScript对象里都会内置一个特殊的属性[[Prototype]]，这个属性在几乎所有对象创建的时候都会被赋予一个非空值。假设我们开始创建了这样的一个对象： 1234var obj = &amp;#123;   name:&apos;liming&apos;&amp;#125;console.log(obj.name) ​    但是如果在obj中没有name这样的一个属性，很明显我们就无法">
+<meta name="keywords" content="原型和原型链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js原型和原型链">
+<meta property="og:url" content="http://yoursite.com/2018/11/26/js原型和原型链/index.html">
 <meta property="og:site_name" content="SweetaMily">
+<meta property="og:description" content="一、对原型的引入​    在每一个JavaScript对象里都会内置一个特殊的属性[[Prototype]]，这个属性在几乎所有对象创建的时候都会被赋予一个非空值。假设我们开始创建了这样的一个对象： 1234var obj = &amp;#123;   name:&apos;liming&apos;&amp;#125;console.log(obj.name) ​    但是如果在obj中没有name这样的一个属性，很明显我们就无法">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/11/26/js原型和原型链/1.jpg">
+<meta property="og:updated_time" content="2018-11-26T02:33:40.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SweetaMily">
+<meta name="twitter:title" content="js原型和原型链">
+<meta name="twitter:description" content="一、对原型的引入​    在每一个JavaScript对象里都会内置一个特殊的属性[[Prototype]]，这个属性在几乎所有对象创建的时候都会被赋予一个非空值。假设我们开始创建了这样的一个对象： 1234var obj = &amp;#123;   name:&apos;liming&apos;&amp;#125;console.log(obj.name) ​    但是如果在obj中没有name这样的一个属性，很明显我们就无法">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/26/js原型和原型链/1.jpg">
 
 
 
@@ -131,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/26/js原型和原型链/">
 
 
 
 
 
-  <title>归档 | SweetaMily</title>
+  <title>js原型和原型链 | SweetaMily</title>
   
 
 
@@ -156,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/sweetamily" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -303,396 +310,229 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/js原型和原型链/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">js原型和原型链</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T08:51:57+08:00">
+                2018-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 20 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/js基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">js基础知识</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js代理/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js生成器和promise/" itemprop="url">
-              
-                <span itemprop="name">生成器和Promise</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/懒加载与预加载/" itemprop="url">
-              
-                <span itemprop="name">懒加载与预加载</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js——闭包问题/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/call和apply/" itemprop="url">
-              
-                <span itemprop="name">apply和call的用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-03T13:00:00+08:00" content="2018-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/title computed和watch/" itemprop="url">
-              
-                <span itemprop="name">组件的继承</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-03T12:39:04+08:00" content="2018-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-Vue" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/一、computed相关的用法说明/" itemprop="url">
-              
-                <span itemprop="name">computed和watch</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-03T12:39:04+08:00" content="2018-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/js异步编程——async的用法/" itemprop="url">
-              
-                <span itemprop="name">js异步编程——async的用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-03T12:39:04+08:00" content="2018-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-Vue" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/js——Vuex相关用法/" itemprop="url">
-              
-                <span itemprop="name">js——Vuex相关用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-03T12:39:04+08:00" content="2018-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/22/前端11_2笔记——webpack/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">webpack</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-22T12:39:04+08:00" content="2017-02-22">
-          02-22
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h3 id="一、对原型的引入"><a href="#一、对原型的引入" class="headerlink" title="一、对原型的引入"></a>一、对原型的引入</h3><p>​    在每一个JavaScript对象里都会内置一个特殊的属性[[Prototype]]，这个属性在几乎所有对象创建的时候都会被赋予一个非空值。假设我们开始创建了这样的一个对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   name:<span class="string">'liming'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name)</span><br></pre></td></tr></table></figure>
+<p>​    但是如果在obj中没有name这样的一个属性，很明显我们就无法访问这个了。如果还有需要，就要引入原型链。比如下面的这个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'liming'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="built_in">Object</span>.create(obj)</span><br><span class="line"><span class="built_in">console</span>.log(obj1.name)</span><br></pre></td></tr></table></figure>
+<p>​    在这个例子里面虽然obj1并没有设置name这个属性，但是通过创建的时候通过Object.create这个方法我们将他的原型设置成了obj，从而之后js在寻找的时候，发现obj1没有这个属性，就会去他的原型链上查找。直到把原型链遍历完为止。</p>
+<p>###二、prototype和constructor </p>
+<p>####1.一个例子</p>
+<p>​    刚刚提到，在我们建立一个对象的时候，会默认生成他的一个原型prototype，当我们实例化对象的时候，这个实例化的对象中有一个属性<code>__proto__</code>会指向原型prototype，原型中有一个属性叫做constructor ，他会指向创建这个对象的函数。比如我们来看下面的这个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    name = <span class="string">'Person'</span>;</span><br><span class="line">    <span class="keyword">this</span>.height = <span class="string">'160cm'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在其原型对象中添加age属性</span></span><br><span class="line">Person.prototype.age = <span class="string">'18'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.name)</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor)</span><br><span class="line"><span class="comment">//Person的实例p1</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p1.age)</span><br><span class="line"><span class="built_in">console</span>.log(p1.name)</span><br><span class="line"><span class="built_in">console</span>.log(p1.__proto__)</span><br></pre></td></tr></table></figure>
+<p>​    我们用一张图来表示上述过程：</p>
+<p><img src="/2018/11/26/js原型和原型链/1.jpg" alt="你想要输入的替代文字"></p>
+<p>####2.分析    </p>
+<p>​    首先我们利用function创建了一个Person类，这个类中name是直接赋值得到，而height用了this声明。这个类创建好后，会为我们自动创建一个原型Person.prototype，这个原型中只有一个属性constructor，它是指向Person类的构造函数，所以如果我们输出Person.prototype.constructor，会输出[Function: Person]。如果我们试图去访问Person.prototype.height，将会输出undefined。之后我们又在他的属性里面添加了一个age属性。</p>
+<p>​    之后我们创建了一个实例化的对象p1，创建实例化对象的时候系统会自动为我们生成一个属性<code>__proto___</code>，指向new这个实例的构造函数的原型对象，这里就是Person.prototype。当我们访问name的时候，由于name虽然是Person的一个属性，但是并没有用this声明，所以p1并不拥有这样的一个属性，即使到他的原型中也不存在，所以就会是undefined。当访问height搭的时候，由于在实例化对象创建的时候就有，所以能够正常输出。访问age的时候，虽然p1中并没有这样的一个属性，但是js会向上寻找他的原型Person.prototype，这里有这样的一个属性age，就会将其输出。</p>
+<p>####3.过程总结</p>
+<p>所以对这几个重要的概念进行梳理：</p>
+<blockquote>
+<p>prototype：构造函数中的属性，指向该构造函数的原型对象。</p>
+<p>constructor：原型对象中的属性，指向该原型对象的构造函数</p>
+<p><code>__proto__</code>：实例中的属性，指向new这个实例的构造函数的原型对象</p>
+</blockquote>
+<p>在我们var p1 = new Person()的时候，实际发生了下面的过程：</p>
+<blockquote>
+<p>1.var p1 = new Object(); //此时p1.<em>proto</em> = Object Prototype</p>
+<p>2.p1.<code>__proto__</code> = Person.prototype;</p>
+<p>3.Person.call(p1);//使用新对象p1调用函数Person，将this作用域给p1</p>
+</blockquote>
+<h3 id="三、原型链"><a href="#三、原型链" class="headerlink" title="三、原型链"></a>三、原型链</h3><p>​    如果在上述例子中，我们将代码做下面的处理，会发现一些不一样的结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    name = <span class="string">'Person'</span>;</span><br><span class="line">    <span class="keyword">this</span>.height = <span class="string">'160cm'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    age:<span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.name)</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor)</span><br><span class="line"><span class="comment">//Person的实例p1</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p1.age)</span><br><span class="line"><span class="built_in">console</span>.log(p1.name)</span><br><span class="line"><span class="built_in">console</span>.log(p1.__proto__)</span><br></pre></td></tr></table></figure>
+<p>​    这里，我们将Person.prototype.age = ‘18’改为用对象的形式单独写出，但会发现，输出结果中Person.prototype.constructor变成了[Function: Object]，说明现在，Person.prototype.constructor指向已经不再是Person了。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/原型和原型链/" rel="tag"># 原型和原型链</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/22/从Url到页面加载的前端知识梳理/" rel="next" title="从Url到页面加载的前端知识梳理">
+                <i class="fa fa-chevron-left"></i> 从Url到页面加载的前端知识梳理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -700,6 +540,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -720,8 +564,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -806,6 +659,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、对原型的引入"><span class="nav-number">1.</span> <span class="nav-text">一、对原型的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、原型链"><span class="nav-number">2.</span> <span class="nav-text">三、原型链</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -949,6 +818,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
