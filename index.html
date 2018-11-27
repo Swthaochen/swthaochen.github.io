@@ -1955,7 +1955,7 @@ Disk Cache
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js实现继承(待修改)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js——闭包问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -1974,7 +1974,7 @@ Disk Cache
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/04/js实现继承(待修改)/" itemprop="url">js实现继承</a></h1>
+                <a class="post-title-link" href="/2018/11/04/js——闭包问题/" itemprop="url">js代理</a></h1>
         
 
         <div class="post-meta">
@@ -2040,7 +2040,7 @@ Disk Cache
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k字
+                  556字
                 </span>
               
 
@@ -2056,7 +2056,7 @@ Disk Cache
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4分钟
+                  2分钟
                 </span>
               
             </div>
@@ -2079,12 +2079,12 @@ Disk Cache
       
         
           
-          js实现继承一、尝试实现原型继承
-123456789101112function Person()&#123;&#125;Person.prototype.dance = function()&#123;&#125;;function Ninja()&#123;&#125;Ninja.prototype = new Person();const ninja = new Ninja();console.log(ninja instanceof Ninja);	//trueconsole.log(ninja instanceof Person)	//trueconsole.log(ninja in
+          js——闭包问题一、理解闭包首先根据下面的例子来理解闭包的概念：
+1234567891011121314151617var ourVar = 'liming'var later;function outerTest()&#123;    var inner = 'haha';    function innerTest()&#123;        console.log(inner);        console.log(ourVar)    &#125;    later = innerTest;&#125;outerTest();later();//运行的结果是：//haha//lim
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/04/js实现继承(待修改)/#more" rel="contents">
+            <a class="btn" href="/2018/11/04/js——闭包问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

@@ -319,188 +319,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js——闭包问题/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HaoChen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SweetaMily">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/04/js——闭包问题/" itemprop="url">js代理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
-                2018-11-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript高级特性</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  556字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          js——闭包问题一、理解闭包首先根据下面的例子来理解闭包的概念：
-1234567891011121314151617var ourVar = 'liming'var later;function outerTest()&#123;    var inner = 'haha';    function innerTest()&#123;        console.log(inner);        console.log(ourVar)    &#125;    later = innerTest;&#125;outerTest();later();//运行的结果是：//haha//lim
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/04/js——闭包问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/懒加载与预加载/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -685,7 +503,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js生成器和promise/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js实现继承(待修改)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -704,7 +522,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/04/js生成器和promise/" itemprop="url">生成器和Promise</a></h1>
+                <a class="post-title-link" href="/2018/11/04/js实现继承(待修改)/" itemprop="url">js实现继承</a></h1>
         
 
         <div class="post-meta">
@@ -770,7 +588,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.3k字
+                  1k字
                 </span>
               
 
@@ -786,7 +604,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9分钟
+                  4分钟
                 </span>
               
             </div>
@@ -809,13 +627,12 @@
       
         
           
-          一、生成器函数类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示：
-123456789function* myGenertor()&#123;   yield 'test1';   yield 'test2';   yield 'test3';&#125;for(let aa of myGenertor())&#123;   console.log(aa)&#125;
-最后，这个程序依次输出的是test1.test2和test3，这也是JavaScript的一个生成器。在定义函数的时候在function后面加一个*表示这是一个生成器函数，并通过关键字yield返回相应的值
+          js实现继承一、尝试实现原型继承
+123456789101112function Person()&#123;&#125;Person.prototype.dance = function()&#123;&#125;;function Ninja()&#123;&#125;Ninja.prototype = new Person();const ninja = new Ninja();console.log(ninja instanceof Ninja);	//trueconsole.log(ninja instanceof Person)	//trueconsole.log(ninja in
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/04/js生成器和promise/#more" rel="contents">
+            <a class="btn" href="/2018/11/04/js实现继承(待修改)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -998,6 +815,189 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/11/04/代理模式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js生成器和promise/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/04/js生成器和promise/" itemprop="url">生成器和Promise</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
+                2018-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript高级特性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          一、生成器函数类似于python，js也有自己的生成器，其基本的使用和定义方式如下所示：
+123456789function* myGenertor()&#123;   yield 'test1';   yield 'test2';   yield 'test3';&#125;for(let aa of myGenertor())&#123;   console.log(aa)&#125;
+最后，这个程序依次输出的是test1.test2和test3，这也是JavaScript的一个生成器。在定义函数的时候在function后面加一个*表示这是一个生成器函数，并通过关键字yield返回相应的值
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/04/js生成器和promise/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1402,6 +1402,8 @@ call和apply这两个方法在利用的时候一般是用来修改函数调用�
       
     
     
+    
+    
       
 
   
@@ -1726,8 +1728,6 @@ store包含了应用的数据（状态）和操作过程。任何组件使用同
 
 
       
-    
-    
     
     
       
