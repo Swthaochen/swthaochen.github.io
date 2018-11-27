@@ -1771,7 +1771,7 @@ Disk Cache
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js代理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js实现继承(待修改)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -1790,7 +1790,7 @@ Disk Cache
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/04/js代理/" itemprop="url">js代理</a></h1>
+                <a class="post-title-link" href="/2018/11/04/js实现继承(待修改)/" itemprop="url">js实现继承</a></h1>
         
 
         <div class="post-meta">
@@ -1856,7 +1856,7 @@ Disk Cache
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k字
+                  1k字
                 </span>
               
 
@@ -1872,7 +1872,7 @@ Disk Cache
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6分钟
+                  4分钟
                 </span>
               
             </div>
@@ -1895,14 +1895,12 @@ Disk Cache
       
         
           
-          1、使用代理控制访问
-
-​    代理是ES6语法提出的，是我们通过代理控制对另一个对象的访问。可以将代理理解为通用化的setter和getter方法，区别就是每个setter和getter只能控制单个对象的属性，而代理可用于对象交互的通用处理，包括调用对象的方法。首先先看下面的这个例子。
-1234567891011121314151617181920212223242526272829303132const people = &#123;    name:'liming'&#125;const father = new Proxy(people,&#123;    get:(target,k
+          js实现继承一、尝试实现原型继承
+123456789101112function Person()&#123;&#125;Person.prototype.dance = function()&#123;&#125;;function Ninja()&#123;&#125;Ninja.prototype = new Person();const ninja = new Ninja();console.log(ninja instanceof Ninja);	//trueconsole.log(ninja instanceof Person)	//trueconsole.log(ninja in
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/04/js代理/#more" rel="contents">
+            <a class="btn" href="/2018/11/04/js实现继承(待修改)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
