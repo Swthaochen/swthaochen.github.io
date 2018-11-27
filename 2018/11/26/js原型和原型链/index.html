@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/26/js原型和原型链/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/11/26/js原型和原型链/2.jpg">
-<meta property="og:updated_time" content="2018-11-27T02:08:28.605Z">
+<meta property="og:updated_time" content="2018-11-27T02:32:14.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型和原型链">
 <meta name="twitter:description" content="一、对原型的引入​    在每一个JavaScript对象里都会内置一个特殊的属性[[Prototype]]，这个属性在几乎所有对象创建的时候都会被赋予一个非空值。假设我们开始创建了这样的一个对象： 1234var obj = &amp;#123;   name:&apos;liming&apos;&amp;#125;console.log(obj.name) ​    但是如果在obj中没有name这样的一个属性，很明显我们就无法">
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k字
+                  1.9k字
                 </span>
               
 
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6分钟
+                  7分钟
                 </span>
               
             </div>
@@ -487,6 +487,8 @@
 <p>​    这里，Student.prototype不会单独创建一个新的内存，而是直接引用了Person.prototype，如果在这个时候我们改了Student.prototype的相关属性，Person.prototype也会被直接修改，故不能这样做。</p>
 <p>​    第二种错误是Student.prototype = new Person()，这里，Student.prototype使用了Person的构造函数，后期会产生一些副作用，如果改变Person中的状态，会影响Student后代。</p>
 <p>​    不过在ES6之后我们可以把Student.prototype = Object.create(Person.prototype)改写成Object.setPrototypeOf(Student.prototype,Person.prototype)</p>
+<h4 id="3-寄生组合式继承"><a href="#3-寄生组合式继承" class="headerlink" title="3.寄生组合式继承"></a>3.寄生组合式继承</h4><p>​    这个方式是针对第一种方式的缺点进行的改造，实际上就是先获取父类的相关属性，再定义一个函数专门用于实现继承并修正的作用，具体实现如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寄生组合式继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritProto</span>(<span class="params">Sub, Super</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//根据Super的原型创建一个新的对象proto</span></span><br><span class="line">    <span class="keyword">var</span> proto = <span class="built_in">Object</span>(Super.prototype);</span><br><span class="line">    <span class="comment">//增强新对象，为其赋construtor值</span></span><br><span class="line">    proto.constructor = Sub;</span><br><span class="line">    <span class="comment">//将新对象赋值给子类的原型。</span></span><br><span class="line">    Sub.prototype = proto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="comment">//Super中定义属性name</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = [<span class="string">'red'</span>,<span class="string">'green'</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Super的原型中定义方法</span></span><br><span class="line">Super.prototype.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//通过构造函数的方式继承Super的属性,只在此处调用一次Super构造函数</span></span><br><span class="line">    Super.call(<span class="keyword">this</span>, name);</span><br><span class="line">    <span class="comment">//定义自己的属性</span></span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用函数，实现继承。代替之前的Sub.prototype = new Super();语句，防止Super构造函数调用两次</span></span><br><span class="line">inheritProto(Sub,Super);</span><br><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> Sub(<span class="string">'liming'</span>,<span class="number">18</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s.sayname())</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -686,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、对原型的引入"><span class="nav-number">1.</span> <span class="nav-text">一、对原型的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-一个例子"><span class="nav-number">1.1.</span> <span class="nav-text">1.一个例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-分析"><span class="nav-number">1.2.</span> <span class="nav-text">2.分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-过程总结"><span class="nav-number">1.3.</span> <span class="nav-text">3.过程总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、原型链"><span class="nav-number">2.</span> <span class="nav-text">三、原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、类的继承"><span class="nav-number">3.</span> <span class="nav-text">四、类的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-组合继承"><span class="nav-number">3.1.</span> <span class="nav-text">1.组合继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-原型式继承"><span class="nav-number">3.2.</span> <span class="nav-text">2.原型式继承</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、对原型的引入"><span class="nav-number">1.</span> <span class="nav-text">一、对原型的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-一个例子"><span class="nav-number">1.1.</span> <span class="nav-text">1.一个例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-分析"><span class="nav-number">1.2.</span> <span class="nav-text">2.分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-过程总结"><span class="nav-number">1.3.</span> <span class="nav-text">3.过程总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、原型链"><span class="nav-number">2.</span> <span class="nav-text">三、原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、类的继承"><span class="nav-number">3.</span> <span class="nav-text">四、类的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-组合继承"><span class="nav-number">3.1.</span> <span class="nav-text">1.组合继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-原型式继承"><span class="nav-number">3.2.</span> <span class="nav-text">2.原型式继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-寄生组合式继承"><span class="nav-number">3.3.</span> <span class="nav-text">3.寄生组合式继承</span></a></li></ol></li></ol></div>
             
 
           </div>
