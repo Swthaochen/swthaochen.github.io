@@ -102,10 +102,14 @@
 <meta property="og:site_name" content="SweetaMily">
 <meta property="og:description" content="​    JavaScript异步编程这块儿我的路线是，先看到settimeout的在for循环里面的神奇执行结果，之后学到node开始逐渐了解到有js异步编程这么一说，就了解到了JavaScript语言和其他编程语言在处理异步问题的时候不同寻常的套路，然后就开始研究一点解决这种异步问题的办法——Promise,async,await和生成器这些用法。当然，最终的归宿就在js事件循环这块。趁着给工">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-10T13:56:49.726Z">
+<meta property="og:image" content="http://yoursite.com/2018/12/08/js事件循环/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/12/08/js事件循环/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/12/08/js事件循环/3.jpg">
+<meta property="og:updated_time" content="2018-12-10T17:04:10.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js事件循环">
 <meta name="twitter:description" content="​    JavaScript异步编程这块儿我的路线是，先看到settimeout的在for循环里面的神奇执行结果，之后学到node开始逐渐了解到有js异步编程这么一说，就了解到了JavaScript语言和其他编程语言在处理异步问题的时候不同寻常的套路，然后就开始研究一点解决这种异步问题的办法——Promise,async,await和生成器这些用法。当然，最终的归宿就在js事件循环这块。趁着给工">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/08/js事件循环/1.jpg">
 
 
 
@@ -404,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  677字
+                  1.5k字
                 </span>
               
 
@@ -420,7 +424,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  5分钟
                 </span>
               
             </div>
@@ -453,6 +457,34 @@
 </ul>
 <p>​    事件循环是指，JavaScript代码从script全局（整体代码）开始执行第一次的循环。完毕后进入函数调用栈，直到这个栈中的所有可执行的宏任务被执行万，就进行所有的微任务。等到所有的微任务被执行完。循环再次从宏任务开始执行，然后又是微任务，循环往复这样执行。这里无论是宏任务还是微任务，都是利用函数调用栈来实现的。</p>
 <p>​    接下来我们通过几个例子来说明这个过程。</p>
+<h3 id="几个实例"><a href="#几个实例" class="headerlink" title="几个实例"></a>几个实例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">4</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>​    这段代码的输出结果是5、4、1、3、2.分析过程如下：</p>
+<ol>
+<li><p>首先程序先进入宏任务script全局代码运行，这里程序进入之后，首先是一个settimeout异步的宏任务，将其中的回调函数放在宏任务的队列中等待。</p>
+</li>
+<li><p>script程序继续执行到下一个settimeout，这里又将其放入在异步宏任务队列中，然后继续执行。</p>
+</li>
+<li><p>script程序继续执行，接下来是一个Promise。Promise中的设置是一个同步事件，then和catch是异步的。因此这里将then中的函数放在微任务队列中等待。</p>
+</li>
+<li><p>script程序执行到输出5，之后这一轮同步事件已经进行完毕了。此时任务队列的分布情况如下所示：</p>
+<p><img src="/2018/12/08/js事件循环/1.jpg" alt="你想要输入的替代文字"></p>
+</li>
+<li><p>现在执行栈为空，因此按照之前我们所说的原则，现在从微任务中取出一个放入执行栈中执行，所以这个时候，在Promise then中的输出语句开始执行。完毕后出栈，这时候微任务队列已经空了，全部执行完毕。因此又开始从宏任务中取。</p>
+<p><img src="/2018/12/08/js事件循环/2.jpg" alt="你想要输入的替代文字"></p>
+</li>
+<li><p>首先按照入队列的顺序从settimeout中取1的回调函数输出，这时候又碰见了Promise，就将其then放在了微任务队列中去。</p>
+</li>
+</ol>
+<p>   <img src="/2018/12/08/js事件循环/3.jpg" alt="你想要输入的替代文字"></p>
+<ol start="7">
+<li><p>之后又取2执行，直到宏任务队列为空为止。这时候宏任务队列为空了。然后又转向微任务中去执行。</p>
+</li>
+<li><p>之后又开始执行微任务中的程序，输出后清理执行栈。此时微任务和宏任务队列都是空。因此最终输出为5，4，1，3，2</p>
+</li>
+</ol>
+<p>​    上面这个例子知识简单的将整个事件循环的过程演示了一遍。但是实际上这里还有很多需要注意的细节问题。这些问题也集中突出了JavaScript语言的运行本质。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'immediate2_nextTick'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">6</span>)</span><br><span class="line">    &#125;,<span class="number">0</span>)</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">4</span>)</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>​    这段代码的输出结果应该是1，immediate2_nextTick，2，4，6，3。这段代码告诉我们js的一个实质问题就是：JavaScript的运行是一个非阻塞的。虽然按照我们之前的说法，js要在执行完一轮宏任务结束之后，才会执行下一轮微任务。但是这里有个条件就是，执行过程中不能有等待。就像上面这个程序中的settimeout输出3一样，虽然看似他论轮数是要早于内层的settimeout的，但是由于它有10000毫秒的等待时间，这是对js单进程的阻塞。js就只能继续先往后执行。等到js执行完毕之后，才会去理会这个延时的回调。js可以看成是一个闲不下来的人，始终要保持自己当前有任务可进行不能等待。实际上这里我认为也可以这样理解，在1000毫秒没有进行完时，这个事件还不能加入到宏任务中去。只有到了1000毫秒响应结束之后才会将其加入到宏任务队列中去。</p>
 
       
     </div>
@@ -642,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关的概念"><span class="nav-number">2.</span> <span class="nav-text">相关的概念</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关的概念"><span class="nav-number">2.</span> <span class="nav-text">相关的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个实例"><span class="nav-number">3.</span> <span class="nav-text">几个实例</span></a></li></ol></div>
             
 
           </div>
