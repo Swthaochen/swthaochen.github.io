@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[js事件循环]]></title>
     <url>%2F2018%2F12%2F08%2Fjs%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[​ JavaScript异步编程这块儿我的路线是，先看到settimeout的在for循环里面的神奇执行结果，之后学到node开始逐渐了解到有js异步编程这么一说，就了解到了JavaScript语言和其他编程语言在处理异步问题的时候不同寻常的套路，然后就开始研究一点解决这种异步问题的办法——Promise,async,await和生成器这些用法。当然，最终的归宿就在js事件循环这块。趁着给工作室做一次分享会的时候，我也比较详细的去了解了下js事件循环相关的知识。总结成了这篇博客。很多东西都是我通过结合一些个人认为比较好的博客写的，同时融入了自己的代码事件。生命在于折腾~~，哈哈。现在进入正题： 引入首先先上下面的这段代码： 12345678910111213console.log('1');setTimeout(()=&gt;&#123; console.log(2) setTimeout(()=&gt;&#123; console.log(6) &#125;,0)&#125;,0)setTimeout(()=&gt;&#123; console.log(3)&#125;,1000)setTimeout(()=&gt;&#123; console.log(4)&#125;,0) ​ 这段代码的执行结果应该是1，2，4，6，3。可能初学异步编程的人会认为结果是1，2，4，3，6。结果的原因之后将会提到，那么在这里可以看见，我们在settimeout中嵌套了一层，同时在外边还执行了不同延时的settimeout来模拟我们的异步请求。多重的异步嵌套确实使人纠缠不清，但如果掌握了事件循环的机制，实际上这个分析起来也不那么难。 相关的概念​ 首先我们需要知道在事件循环中，宏事件和微事件两个概念： ​ 在一个线程中，事件循环是唯一的，但是任务队列可以有多个，同时任务队列分为宏任务和微任务两种，最新的版本中被称为task和jobs。两个大致包括下面的内容： 宏任务：script(整体代码), setTimeout, setInterval, setImmediate, I/O, UI rendering 微任务：process.nextTick, Promise, MutationObserver(html5新特性) ​ 事件循环是指，JavaScript代码从script全局（整体代码）开始执行第一次的循环。完毕后进入函数调用栈，直到这个栈中的所有可执行的宏任务被执行万，就进行所有的微任务。等到所有的微任务被执行完。循环再次从宏任务开始执行，然后又是微任务，循环往复这样执行。这里无论是宏任务还是微任务，都是利用函数调用栈来实现的。 ​ 接下来我们通过几个例子来说明这个过程。]]></content>
+      <categories>
+        <category>web基础知识</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[再谈web缓存]]></title>
