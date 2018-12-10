@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/一、computed相关的用法说明/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/js——Vuex相关用法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -338,7 +338,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/03/一、computed相关的用法说明/" itemprop="url">computed和watch</a></h1>
+                <a class="post-title-link" href="/2018/11/03/js——Vuex相关用法/" itemprop="url">js——Vuex相关用法</a></h1>
         
 
         <div class="post-meta">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  850字
+                  781字
                 </span>
               
 
@@ -421,12 +421,18 @@
       
         
           
-          一、computed相关的用法说明先看下面这行代码的效果：
-123456789101112131415161718192021222324252627282930import Vue from 'vue'new Vue(&#123;    el:'#root',    template:`    &lt;div&gt;        &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;        &lt;div&gt;&#123;&#123;getname()&#125;&#125;&lt;/div&gt;        &lt;div&g
+          js——Vuex相关用法
+平时在一个vue组件中，里面的数据和方法只有在但当前的.vue组件中可以访问和使用，其他的组件是无法访问的。但是在实际的业务逻辑中，经常有跨组件数据的需求，因此，Vuex的设计就是为了用来统一管理组件状态的。它定义了一系列的规范来使用和操作数据，使组件应用更加高效。
+###Vuex的基本用法：
+首先通过NPM安装Vuex：
+npm install –save vuex
+在main.js中通过Vue.use()使用Vuex：
+store包含了应用的数据（状态）和操作过程。任何组件使用同一store的操作的数据时，只要store的数据发生变化，对应的组件也会立刻更新。
+在
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/03/一、computed相关的用法说明/#more" rel="contents">
+            <a class="btn" href="/2018/11/03/js——Vuex相关用法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -728,7 +734,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
