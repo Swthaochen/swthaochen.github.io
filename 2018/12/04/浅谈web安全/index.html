@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="SweetaMily">
 <meta property="og:description" content="一、同源策略同源策略的简介​    同源策略是web浏览器最基本也是最核心的安全机制，所谓同源策略，就是指浏览器限制了来自不同源的“document”或者脚本，对当前”document“的读取或是修改。这个策略对于web安全是很重要的，可以想象下，如果一个test.com可以在test2.com没有加载的情况下，随意读取或是修改其内容，会发生极大的安全隐患。因此，这一策略对于web安全而言是及其重">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-04T16:25:04.476Z">
+<meta property="og:updated_time" content="2018-12-22T17:12:39.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈web安全">
 <meta name="twitter:description" content="一、同源策略同源策略的简介​    同源策略是web浏览器最基本也是最核心的安全机制，所谓同源策略，就是指浏览器限制了来自不同源的“document”或者脚本，对当前”document“的读取或是修改。这个策略对于web安全是很重要的，可以想象下，如果一个test.com可以在test2.com没有加载的情况下，随意读取或是修改其内容，会发生极大的安全隐患。因此，这一策略对于web安全而言是及其重">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k字
+                  3.9k字
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6分钟
+                  13分钟
                 </span>
               
             </div>
@@ -475,7 +475,7 @@
 <p>​    这就是由于同源策略拒绝了我们的请求所导致的。因此，在前端ajax，包括一些使用了ajax原理的相关插件，在这里都会存在跨域的问题需要注意。</p>
 <h4 id="跨域问题的改进和安全性问题"><a href="#跨域问题的改进和安全性问题" class="headerlink" title="跨域问题的改进和安全性问题"></a>跨域问题的改进和安全性问题</h4><p>​    由于这里我们只讨论与web安全有关的问题，故这里不针对跨域问题展开来讲，只是由于互联网目前随着相关技术的发展，有时又不能不进行相关的跨域请求。W3C目前对于XMLHttpRequest制定的标准是通过HTTP头部来确认是否允许跨域。但是，问题就在于这个方案的提出是建立在我们认为JavaScript不能对HTTP头部进行更改而形成的，如果这个基础不成立的话，这种方案实际上也是不安全的。</p>
 <p>​    当然，同源策略也并不是完全可靠的，也会存在部分跨域漏洞导致同源策略被绕过。比如在IE8中存在一种CSS跨域漏洞。由于之前提到，一些例如<code>&lt;script&gt;</code>之类的标签可以进行跨域请求加载资源，而这里就会存在漏洞使其能够读取到页面信息，从而造成内容的泄露。这就是由于绕过同源策略造成的。</p>
-<h3 id="浏览器沙箱"><a href="#浏览器沙箱" class="headerlink" title="浏览器沙箱"></a>浏览器沙箱</h3><h4 id="浏览器多进程安全机制"><a href="#浏览器多进程安全机制" class="headerlink" title="浏览器多进程安全机制"></a>浏览器多进程安全机制</h4><p>​    现代浏览器大多采用多线程的架构，这样做一方面是为了将浏览器的各个不同的功能分开方便管理，一方面实际上也是为了安全性考虑。将浏览器中的各个功能分开，即使有一个进程出现崩溃或者受到攻击，也不会影响到其他进程的正常运行，相较于单线程中一个线程崩溃导致 浏览器整个崩溃而言，这种机制提供了很好的用户体验，并且在web安全上有了很大的提升。</p>
+<h3 id="二、浏览器沙箱"><a href="#二、浏览器沙箱" class="headerlink" title="二、浏览器沙箱"></a>二、浏览器沙箱</h3><h4 id="浏览器多进程安全机制"><a href="#浏览器多进程安全机制" class="headerlink" title="浏览器多进程安全机制"></a>浏览器多进程安全机制</h4><p>​    现代浏览器大多采用多线程的架构，这样做一方面是为了将浏览器的各个不同的功能分开方便管理，一方面实际上也是为了安全性考虑。将浏览器中的各个功能分开，即使有一个进程出现崩溃或者受到攻击，也不会影响到其他进程的正常运行，相较于单线程中一个线程崩溃导致 浏览器整个崩溃而言，这种机制提供了很好的用户体验，并且在web安全上有了很大的提升。</p>
 <p>​    一般来讲，浏览器的每一个标签tab都是一个进程，同时这些进程可能还包含下面的一些进程：</p>
 <ul>
 <li>Browser进程：作为浏览器的主进程，，负责主要的协调和主控，一般只有一个。</li>
@@ -490,7 +490,43 @@
 <p>​    同时。沙箱技术也会限制对资源的访问。在Chrome浏览器中，渲染引擎就是由Sandbox隔离的，使得网页的渲染相关的操作在一个独立的Render进程中执行，而这个引擎明显是受到限制的，会先知道这个进程对于一些数据信息的读取和资源的访问因此这种机制是一个相对比较安全的机制。</p>
 <p>​    当然也可以选择跨过这种安全机制，只是需要调用相关的API接口来实现，但是为了保证系统的安全性，系统也会最初相应的严格安全检查机制来保证程序的可行度。</p>
 <h4 id="现代浏览器的问题"><a href="#现代浏览器的问题" class="headerlink" title="现代浏览器的问题"></a>现代浏览器的问题</h4><p>​    虽然目前多谢进程框架和Sandbox技术可以有效地保证web应用的相对安全性，但是目前在浏览器中出现的一些第三方插件，由于不受上述安全机制的管辖，并且目前而言也没有一个具体的标准来约束这些第三方插件的运行，所以目前而言，浏览器易受到第三方插件的漏洞攻击。</p>
-<h3 id="恶意网站的拦截机制"><a href="#恶意网站的拦截机制" class="headerlink" title="恶意网站的拦截机制"></a>恶意网站的拦截机制</h3><p>​    </p>
+<h3 id="三、恶意网站的拦截机制"><a href="#三、恶意网站的拦截机制" class="headerlink" title="三、恶意网站的拦截机制"></a>三、恶意网站的拦截机制</h3><p>​    浏览器会对用户进行的网络请求进行恶意网站的检测，从而避免用户在访问网站的过程中有恶意网站给用户带来潜在的安全问题，常见的恶意网站主要分为下面的几类：</p>
+<ul>
+<li><p>欺骗性网站：</p>
+<p>​    这类网站又被称为是钓鱼网站，主要是其会伪装成合法的网站，从而诱导用户的一些操作，对用户的隐私信息进行窃取，从而引起极大的安全危险。</p>
+</li>
+<li><p>攻击性网站：</p>
+<p>​    网站中有恶意脚本，该脚本可以控制访问用户的信息，从而造成用户账号信息泄露等危险。</p>
+</li>
+<li><p>恶意软件：</p>
+<p>​    web中存在的恶意软件，可能会导致计算机受到攻击的危险。</p>
+<p>​    对于以上恶意网站，浏览器的安全机制一般是由浏览器自己维护一份被举报和已知的恶意网站名单，在用户访问的目标网站存在于这个名单中的时候，浏览器会进行拦截并提醒用户是否继续访问。当然，目前的浏览器厂商实际上主要还是已推送恶意网站的黑名单为主，却很少能从浏览器收集到数据，或者直接在客户集中简历这样的模型。现代浏览器大多还是和专业的安全厂商进行相应的合作，由这些安全厂商或机构提供恶意网站的名单。</p>
+<p>​    除了这个恶意网站的黑名单外，事实上，现代浏览器还都开始支持EV SSL证书，增强web安全级别。这个证书是全球数字证书机构和浏览器厂商仪器构建的。该证书遵守X509标准，并向前兼容普通的证书。如果浏览器支持这种证书，会在地址栏中做出特别的标注，如果不支持，就会将其视作为普通的证书处理。这样的证书显示也能提醒用户哪些是可靠的网站。</p>
+</li>
+</ul>
+<h3 id="四、深入点击劫持技术"><a href="#四、深入点击劫持技术" class="headerlink" title="四、深入点击劫持技术"></a>四、深入点击劫持技术</h3><p>####1.简介</p>
+<p>​    点击劫持是web安全中的一种视觉上的欺骗方式，因此该技术又被称为界面伪装技术。这种伪装技术一般会有以下的两种方式。一是攻击者会使用一个iframe覆盖在原来的网页上，并诱导用户在这个页面上进行一些操作，从而将用户引诱到恶意连接中，从而达成攻击的目的。通常这个iframe是透明的，从而用户并不知道他所点击的iframe。第二种情况是攻击者使用一张图片覆盖在网页上，将原来的网页原有的界面和功能覆盖。通常，攻击者会提前设计好恶意链接，并科恩那个会结合XSS和CSRF攻击相结合进行攻击。</p>
+<h4 id="2-原理"><a href="#2-原理" class="headerlink" title="2.原理"></a>2.原理</h4><p>​    在HTML语言中，有一个名为iframe的标签，它的用法是可以创建包含另一个页面的内联框架，而在点击劫持中通常会被攻击者用来载入恶意网站的链接，引用受害者进入。攻击者通常实施的攻击步骤是：</p>
+<ul>
+<li>攻击者创建一个网页并利用iframe将恶意网站包含。</li>
+<li>利用前端相关技术将目标网站隐藏，是的用户无法感受到这个目标页面的存在。</li>
+<li>对用户可能触发的特定功能加上攻击，达到攻击者的目的</li>
+<li>用户在不知情的情况下出发了攻击者设置的指令</li>
+</ul>
+<h4 id="3-利用的相关技术"><a href="#3-利用的相关技术" class="headerlink" title="3.利用的相关技术"></a>3.利用的相关技术</h4><p>​    一般点击劫持使用的技术包括目标网页的隐藏、点击操作劫持和拖拽技术：</p>
+<p>​    （1）目标页面隐藏</p>
+<p>​    攻击者对于目标页面的隐藏通常是使用前端CSS隐藏技术和双iframe隐藏技术实现。</p>
+<p>​    CSS隐藏技术就是利用CSS属性控制页面中显示元素的效果。在CSS中，有一个名为opacity的参数是用来控制                元素的透明度的。其取值范围是0~1。通常1表示这个元素不透明，0表示这个元素透明。当攻击者将目标元素的opacity 设置为小于0.1时，受害者就几乎不能看见被攻击者操控的元素。</p>
+<p>​    双iframe隐藏技术是指使用了iframe内联和外联框架实现。内联框架主要是载入攻击者的目标元素，并将这个元素的链接设置成攻击者特定的url。外联框架主要是对元素进行筛选，从而让整个页面实现内联框架中特定的按钮。</p>
+<p>​    （2）点击劫持操作</p>
+<p>​    在上一步攻击者隐藏了目标页面之后，攻击者还会利用社会工程学原理，诱导用户点击带有恶意链接的特定按钮。一般，攻击者会将这些带有特定功能的按钮设置成类似常见系统消息弹框的外形，从而增加用户点击的概率。或者攻击者会使用脚本或是奇特的插件技术增加这个概率，如实现鼠标跟踪、按钮劫持等。</p>
+<p>​    （3）拖拽技术</p>
+<p>​    一般主流的浏览器都会有拖拽的接口，方便开发人员创建交互式网页。但是这样的接口由于在设计的时候没有考虑安全性的问题造成拖拽技术可以实现跨域操作，是得攻击者可以突破很多已有的安全策略对受害者进行安全攻击。利用这种技术，攻击者可以将自己的文本注入到网页中，欺骗用户进行相关的不安全操作。同时攻击者哈辉利用浏览器的API对iframe中的内容拖拽到textarea中从而获取用户的信息。</p>
+<p>​    （4）和其他技术的结合</p>
+<p>​    点击劫持还可以和常见的CSRF以及XSS漏洞进行攻击。例如攻击者利用CSRF漏洞防御技术的token识别技术，将载入目标网页的token添加到src后面。使用HTTP的“GET”方法会将表单提交，实现了web攻击。常见的Twitter蠕虫就是用了这样的原理实现CSRF攻击。和XSS时，会转变为存储型的XSS漏洞。如果用户操作触发了这个漏洞，攻击者就可以在用户的浏览器中执行攻击的JavaScript代码进行攻击。</p>
+<h4 id="4-防御措施"><a href="#4-防御措施" class="headerlink" title="4.防御措施"></a>4.防御措施</h4><p>​    对点击劫持的防御，现代通常采用下面的几种方法进行防御：</p>
+<p>​    浏览器端，通常需要用户浏览器升级成最新的版本，从而提供更多的安全防范措施，修复已知的安全漏洞。对于火狐浏览器的使用者，可以使用NoScript拓展功能进行点击劫持的检测，从而提醒用户网页中可能潜在的点击劫持的危险。</p>
+<p>​    服务端，可以使用认证码对用户进行验证，确定是用户主动发出的请求才进行相关的操作。例如部分网站会进行用户输入验证码，进行身份验证。也可采用 X-FRAME-OPTIONS。该机制中，DENY规定任何网站都不能使用iframe，SAMEORIGIN规定了只有符合同源策略的网站才有使用iframe加载页面的权限。从而使得攻击者无法通过iframe来伪造网站进行攻击。也可以使用FrameBusting 代码，使用相关的JavaScript脚本对非法的网站进行拦截。</p>
 
       
     </div>
@@ -684,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、同源策略"><span class="nav-number">1.</span> <span class="nav-text">一、同源策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略的简介"><span class="nav-number">1.1.</span> <span class="nav-text">同源策略的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略及跨域问题"><span class="nav-number">1.2.</span> <span class="nav-text">同源策略及跨域问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域问题的改进和安全性问题"><span class="nav-number">1.3.</span> <span class="nav-text">跨域问题的改进和安全性问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器沙箱"><span class="nav-number">2.</span> <span class="nav-text">浏览器沙箱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器多进程安全机制"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器多进程安全机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sandbox技术的应用"><span class="nav-number">2.2.</span> <span class="nav-text">Sandbox技术的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现代浏览器的问题"><span class="nav-number">2.3.</span> <span class="nav-text">现代浏览器的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恶意网站的拦截机制"><span class="nav-number">3.</span> <span class="nav-text">恶意网站的拦截机制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、同源策略"><span class="nav-number">1.</span> <span class="nav-text">一、同源策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略的简介"><span class="nav-number">1.1.</span> <span class="nav-text">同源策略的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略及跨域问题"><span class="nav-number">1.2.</span> <span class="nav-text">同源策略及跨域问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域问题的改进和安全性问题"><span class="nav-number">1.3.</span> <span class="nav-text">跨域问题的改进和安全性问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、浏览器沙箱"><span class="nav-number">2.</span> <span class="nav-text">二、浏览器沙箱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器多进程安全机制"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器多进程安全机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sandbox技术的应用"><span class="nav-number">2.2.</span> <span class="nav-text">Sandbox技术的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现代浏览器的问题"><span class="nav-number">2.3.</span> <span class="nav-text">现代浏览器的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、恶意网站的拦截机制"><span class="nav-number">3.</span> <span class="nav-text">三、恶意网站的拦截机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、深入点击劫持技术"><span class="nav-number">4.</span> <span class="nav-text">四、深入点击劫持技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-原理"><span class="nav-number">4.1.</span> <span class="nav-text">2.原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-利用的相关技术"><span class="nav-number">4.2.</span> <span class="nav-text">3.利用的相关技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-防御措施"><span class="nav-number">4.3.</span> <span class="nav-text">4.防御措施</span></a></li></ol></li></ol></div>
             
 
           </div>
