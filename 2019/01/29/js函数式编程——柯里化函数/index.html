@@ -95,13 +95,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="SweetaMily">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+<meta name="description" content="一、相关回顾1、.length的用法​    函数中我们可以使用函数名.length来查询函数的参数的个数，这个属性的值永远不会改变，并且总是匹配函数声明参数的数量。 1234function test(a,b,c)&amp;#123;    console.log(test.length)	//3&amp;#125;test(1,2,3) 2.函数的arguments​    在函数域内都有一个argument">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js函数式编程——柯里化函数">
+<meta property="og:url" content="http://yoursite.com/2019/01/29/js函数式编程——柯里化函数/index.html">
 <meta property="og:site_name" content="SweetaMily">
+<meta property="og:description" content="一、相关回顾1、.length的用法​    函数中我们可以使用函数名.length来查询函数的参数的个数，这个属性的值永远不会改变，并且总是匹配函数声明参数的数量。 1234function test(a,b,c)&amp;#123;    console.log(test.length)	//3&amp;#125;test(1,2,3) 2.函数的arguments​    在函数域内都有一个argument">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-29T03:43:59.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SweetaMily">
+<meta name="twitter:title" content="js函数式编程——柯里化函数">
+<meta name="twitter:description" content="一、相关回顾1、.length的用法​    函数中我们可以使用函数名.length来查询函数的参数的个数，这个属性的值永远不会改变，并且总是匹配函数声明参数的数量。 1234function test(a,b,c)&amp;#123;    console.log(test.length)	//3&amp;#125;test(1,2,3) 2.函数的arguments​    在函数域内都有一个argument">
 
 
 
@@ -131,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/29/js函数式编程——柯里化函数/">
 
 
 
 
 
-  <title>归档 | SweetaMily</title>
+  <title>js函数式编程——柯里化函数 | SweetaMily</title>
   
 
 
@@ -156,7 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/sweetamily" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -303,391 +307,184 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/29/js函数式编程——柯里化函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaoChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SweetaMily">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">js函数式编程——柯里化函数</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T10:27:09+08:00">
+                2019-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 26 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/17/排序算法总结/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">前端菜鸡的算法——排序算法总结</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  838字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-17T15:00:00+08:00" content="2018-11-17">
-          11-17
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/12/Webpack个人总结/" itemprop="url">
-              
-                <span itemprop="name">Webpack个人总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-12T18:22:00+08:00" content="2018-11-12">
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/11/set和map/" itemprop="url">
-              
-                <span itemprop="name">ES6语法——Set和Map数据结构</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-11T11:08:00+08:00" content="2018-11-11">
-          11-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="一、相关回顾"><a href="#一、相关回顾" class="headerlink" title="一、相关回顾"></a>一、相关回顾</h3><h4 id="1、-length的用法"><a href="#1、-length的用法" class="headerlink" title="1、.length的用法"></a>1、.length的用法</h4><p>​    函数中我们可以使用函数名.length来查询函数的参数的个数，这个属性的值永远不会改变，并且总是匹配函数声明参数的数量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(test.length)	<span class="comment">//3</span></span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-函数的arguments"><a href="#2-函数的arguments" class="headerlink" title="2.函数的arguments"></a>2.函数的<code>arguments</code></h4><p>​    在函数域内都有一个<code>arguments</code> 变量来访问传递给函数的所有参数。这是一个类数组，类数组有数组的length用法，并且可以用下标的索引方式来访问每个元素。和数组不同的是，他的类型是Object，并且不能调用数组的类似pop()之类的API，也不能是使用for in语句来实现对类数组的遍历。类数组转化为数组的方式是Array.prototype.slice.call(arguments)，当然可以简写为[].slice.call(arguments)</p>
+<p>​    在ES语法中，我们也可以使用spread operator(扩展操作) / rest parameters(剩余参数) 来访问参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">howMany</span>(<span class="params">...args</span>) </span>&#123;  </span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"args:"</span>, args, <span class="string">", length:"</span>, args.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、-Currying-柯里化-函数"><a href="#二、-Currying-柯里化-函数" class="headerlink" title="二、 Currying(柯里化) 函数"></a>二、 Currying(柯里化) 函数</h3><p>​     Currying(柯里化) 函数是加上就是把接受 N 个参数的函数转换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果。并且我们也希望可以用一个或多个参数来调用它，然后它将部分应用；直到它收到最后一个参数（基于原始函数的参数数量），此时它将返回使用所有参数调用原始函数的计算值。    于是我们可以做下面的写法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">curried</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> agrs = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">        <span class="keyword">return</span> agrs.length &gt;= fn.length ?</span><br><span class="line">            fn.apply(<span class="literal">null</span>,agrs) : </span><br><span class="line">            <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> rest = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">                <span class="keyword">return</span> curried.apply(<span class="literal">null</span>,agrs.concat(rest))</span><br><span class="line">            &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b,c,d</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> curry_call = curry(add)</span><br><span class="line"><span class="built_in">console</span>.log(curry_call(<span class="number">1</span>)(<span class="number">2</span>,<span class="number">3</span>)(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<p>​    每次调用的时候，我们都会获取调用时候的参数并且会结合之前的参数进行判断，当前已经获取的参数是否已经大于声明的函数的参数，如果大于等于就会执行被声明的函数，如果不大于就会返回一个函数继续重复接受参数并执行。</p>
+<p>​    但是上面的写法中，我们在每次设置apply函数的环境的时候都是null，这样在一些情况下会出问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">curried</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> agrs = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">        <span class="keyword">return</span> agrs.length &gt;= fn.length ?</span><br><span class="line">            fn.apply(<span class="literal">null</span>,agrs) : </span><br><span class="line">            <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> rest = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">                <span class="keyword">return</span> curried.apply(<span class="literal">null</span>,agrs.concat(rest))</span><br><span class="line">            &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">    name:<span class="string">'xiaoming'</span>,</span><br><span class="line">    setPeople:<span class="function"><span class="keyword">function</span>(<span class="params">sex,height,age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="keyword">this</span>.name + <span class="string">':'</span> , age , sex , height].join(<span class="string">' '</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">people.mytest = curry(people.setPeople)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(people.mytest(<span class="string">'man'</span>)(<span class="number">170</span>,<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+<p>​    发现执行的结果中，name变成了undefined，这就是因为我们的this在调用的时候赋了null导致的。这时候我们就需要指定该函数执行的上下文this，在我们第一次调用的时候我们就利用context纪录每次执行的环境this：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">curried</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> context = <span class="keyword">this</span></span><br><span class="line">        <span class="keyword">var</span> agrs = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">        <span class="keyword">return</span> agrs.length &gt;= fn.length ?</span><br><span class="line">            fn.apply(context,agrs) : </span><br><span class="line">            <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> rest = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">                <span class="keyword">return</span> curried.apply(context,agrs.concat(rest))</span><br><span class="line">            &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">    name:<span class="string">'xiaoming'</span>,</span><br><span class="line">    setPeople:<span class="function"><span class="keyword">function</span>(<span class="params">sex,height,age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="keyword">this</span>.name + <span class="string">':'</span> , age , sex , height].join(<span class="string">' '</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">people.mytest = curry(people.setPeople)</span><br><span class="line"><span class="built_in">console</span>.log(people.mytest(<span class="string">'man'</span>)(<span class="number">170</span>,<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/06/web缓存机制/" itemprop="url">
-              
-                <span itemprop="name">web缓存机制</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-06T18:36:04+08:00" content="2018-11-06">
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js实现继承(待修改)/" itemprop="url">
-              
-                <span itemprop="name">js实现继承</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js生成器和promise/" itemprop="url">
-              
-                <span itemprop="name">生成器和Promise</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js代理/" itemprop="url">
-              
-                <span itemprop="name">js代理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/js——闭包问题/" itemprop="url">
-              
-                <span itemprop="name">js——闭包问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/04/懒加载与预加载/" itemprop="url">
-              
-                <span itemprop="name">懒加载与预加载</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-04T13:00:00+08:00" content="2018-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/03/call和apply/" itemprop="url">
-              
-                <span itemprop="name">apply和call的用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-03T13:00:00+08:00" content="2018-11-03">
-          11-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/28/js函数式编程——map、reduce和filter的函数式用法/" rel="next" title="js函数式编程——map、reduce和filter的函数式用法">
+                <i class="fa fa-chevron-left"></i> js函数式编程——map、reduce和filter的函数式用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -695,6 +492,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -715,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -801,6 +611,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、相关回顾"><span class="nav-number">1.</span> <span class="nav-text">一、相关回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-length的用法"><span class="nav-number">1.1.</span> <span class="nav-text">1、.length的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-函数的arguments"><span class="nav-number">1.2.</span> <span class="nav-text">2.函数的arguments</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、-Currying-柯里化-函数"><span class="nav-number">2.</span> <span class="nav-text">二、 Currying(柯里化) 函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -944,6 +770,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
