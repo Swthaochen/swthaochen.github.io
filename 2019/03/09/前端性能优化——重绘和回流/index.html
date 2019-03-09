@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="js——闭包问题一、理解闭包首先根据下面的例子来理解闭包的概念： 1234567891011121314151617var ourVar = &apos;liming&apos;var later;function outerTest()&amp;#123;    var inner = &apos;haha&apos;;    function innerTest()&amp;#123;        console.log(inner);">
+<meta name="description" content="一、为什么CSS加载性能会让JavaScript变慢？​    在浏览器中，UI渲染和JavaScript的解析实际上是放在两个不同的线程里面进行的，也就是UI的渲染会对应一个线程进行，同时JavaScript的解析会在另一个线程中进行。既然是在两个不同的线程中进行，为什么我们还会说CS加载会影响JavaScript的解析呢？实际上在我们的浏览器中，UI渲染和JavaScript的解析这两个进程之">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js——闭包问题">
-<meta property="og:url" content="http://yoursite.com/2018/11/04/js——闭包问题/index.html">
+<meta property="og:title" content="前端性能优化——重绘和回流">
+<meta property="og:url" content="http://yoursite.com/2019/03/09/前端性能优化——重绘和回流/index.html">
 <meta property="og:site_name" content="SweetaMily">
-<meta property="og:description" content="js——闭包问题一、理解闭包首先根据下面的例子来理解闭包的概念： 1234567891011121314151617var ourVar = &apos;liming&apos;var later;function outerTest()&amp;#123;    var inner = &apos;haha&apos;;    function innerTest()&amp;#123;        console.log(inner);">
+<meta property="og:description" content="一、为什么CSS加载性能会让JavaScript变慢？​    在浏览器中，UI渲染和JavaScript的解析实际上是放在两个不同的线程里面进行的，也就是UI的渲染会对应一个线程进行，同时JavaScript的解析会在另一个线程中进行。既然是在两个不同的线程中进行，为什么我们还会说CS加载会影响JavaScript的解析呢？实际上在我们的浏览器中，UI渲染和JavaScript的解析这两个进程之">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-10T12:52:51.753Z">
+<meta property="og:updated_time" content="2019-03-09T12:53:01.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js——闭包问题">
-<meta name="twitter:description" content="js——闭包问题一、理解闭包首先根据下面的例子来理解闭包的概念： 1234567891011121314151617var ourVar = &apos;liming&apos;var later;function outerTest()&amp;#123;    var inner = &apos;haha&apos;;    function innerTest()&amp;#123;        console.log(inner);">
+<meta name="twitter:title" content="前端性能优化——重绘和回流">
+<meta name="twitter:description" content="一、为什么CSS加载性能会让JavaScript变慢？​    在浏览器中，UI渲染和JavaScript的解析实际上是放在两个不同的线程里面进行的，也就是UI的渲染会对应一个线程进行，同时JavaScript的解析会在另一个线程中进行。既然是在两个不同的线程中进行，为什么我们还会说CS加载会影响JavaScript的解析呢？实际上在我们的浏览器中，UI渲染和JavaScript的解析这两个进程之">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/04/js——闭包问题/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/09/前端性能优化——重绘和回流/">
 
 
 
 
 
-  <title>js——闭包问题 | SweetaMily</title>
+  <title>前端性能优化——重绘和回流 | SweetaMily</title>
   
 
 
@@ -321,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/js——闭包问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/前端性能优化——重绘和回流/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HaoChen">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js——闭包问题</h1>
+          <h1 class="post-title" itemprop="name headline">前端性能优化——重绘和回流</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T13:00:00+08:00">
-                2018-11-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-09T12:35:35+08:00">
+                2019-03-09
               </time>
             
 
@@ -360,28 +360,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript高级特性/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript高级特性</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -404,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  556字
+                  1.4k字
                 </span>
               
 
@@ -420,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  4分钟
                 </span>
               
             </div>
@@ -441,13 +419,49 @@
       
 
       
-        <h2 id="js——闭包问题"><a href="#js——闭包问题" class="headerlink" title="js——闭包问题"></a>js——闭包问题</h2><h3 id="一、理解闭包"><a href="#一、理解闭包" class="headerlink" title="一、理解闭包"></a>一、理解闭包</h3><p>首先根据下面的例子来理解闭包的概念：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ourVar = <span class="string">'liming'</span></span><br><span class="line"><span class="keyword">var</span> later;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outerTest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> inner = <span class="string">'haha'</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerTest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(inner);</span><br><span class="line">        <span class="built_in">console</span>.log(ourVar)</span><br><span class="line">    &#125;</span><br><span class="line">    later = innerTest;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outerTest();</span><br><span class="line">later();</span><br><span class="line"><span class="comment">//运行的结果是：</span></span><br><span class="line"><span class="comment">//haha</span></span><br><span class="line"><span class="comment">//liming</span></span><br></pre></td></tr></table></figure>
-<p>在上面的代码中，在外部函数我们声名了一个变量inner，然后又声名了一个内部函数innerTest，接下来在内部函数中访问全局变量ourVar和函数内的变量inne，之后为了在全局中能够调用这个内部函数，在全局变量中设置了一个变量接受这个函数，通过调用outerTest创建内部函数并将内部函数赋给later，之后调用later。可以看见，即使现在内部作用域消失在执行内部函数时，内部变量依然存在。</p>
-<p>这是因为在外部函数声明内部函数的时候，不仅定义了函数的声明，而且创建了一个闭包。闭包不仅包含了函数的声明，还包括了在函数声明时该作用域的全部变量。在执行内部函数的时候，虽然作用域已经消失，但是通过闭包，还能访问原始的作用域。</p>
-<h3 id="二、使用闭包"><a href="#二、使用闭包" class="headerlink" title="二、使用闭包"></a>二、使用闭包</h3><h4 id="1-封装私有变量"><a href="#1-封装私有变量" class="headerlink" title="1.封装私有变量"></a>1.封装私有变量</h4><p>虽然JavaScript不支持私有变量，但我们可以利用闭包的特性来实现私有变量的基本功能。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">student</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age = <span class="number">23</span>;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"liHua"</span></span><br><span class="line">    <span class="keyword">this</span>.getAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.increase = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        age++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> student();</span><br><span class="line"><span class="built_in">console</span>.log(stu1.age)</span><br><span class="line"><span class="built_in">console</span>.log(stu1.name)</span><br><span class="line"><span class="built_in">console</span>.log(stu1.getAge())</span><br><span class="line"><span class="comment">//运行结果</span></span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"><span class="comment">//liHua</span></span><br><span class="line"><span class="comment">//23</span></span><br></pre></td></tr></table></figure>
-<p>上述代码中，我们定义了一个age作为student类中的私有属性。由于js的作用域规则的限制，只能在构造器内部访问该变量。所以直接访问stu1.age执行的结果就是undefined。为了让外界可以接触这个变量，可以利用getAge来向外暴露。虽然这时候，函数的作用域结束了，但实例化对象通过this拥有这个作用域，所以可以访问他的方法。注意这里直接var定义的属性和利用this定义的属性是不一样的。</p>
+        <h3 id="一、为什么CSS加载性能会让JavaScript变慢？"><a href="#一、为什么CSS加载性能会让JavaScript变慢？" class="headerlink" title="一、为什么CSS加载性能会让JavaScript变慢？"></a>一、为什么CSS加载性能会让JavaScript变慢？</h3><p>​    在浏览器中，UI渲染和JavaScript的解析实际上是放在两个不同的线程里面进行的，也就是UI的渲染会对应一个线程进行，同时JavaScript的解析会在另一个线程中进行。既然是在两个不同的线程中进行，为什么我们还会说CS加载会影响JavaScript的解析呢？实际上在我们的浏览器中，UI渲染和JavaScript的解析这两个进程之间是一种互斥的关系。这是因为在实际的整个页面渲染和解析中，如果我们的这两个进程同时在进行，可能会使得JavaScript在进行解析的时候，由于DOM并没有完全构建出来，导致js的解析效果并不会像我们预期的那样，也就是这里渲染前和渲染后的效果不一致。因此在真实的浏览器中，一般是在进行css渲染的时候，JavaScript的解析一般是被阻塞的。直到整个css渲染完成之后，JavaScript的代码才会被执行。因此我们可以发现JavaScript的执行时间是取决于css执行的时间的。如果我们频繁的去进行css重绘和回流，就会导致我们频繁的去进行UI渲染进程，这时候js对应的进程就会被阻塞，导致js执行变慢。</p>
+<h3 id="二、重绘和回流的定义"><a href="#二、重绘和回流的定义" class="headerlink" title="二、重绘和回流的定义"></a>二、重绘和回流的定义</h3><p>​    <strong>回流</strong>：当render tree中的一部分（或全部）因为元素的规模尺寸、布局、隐藏等改变而需要重新构建，就成作为回流。一般当页面的布局和几何属性发生变化的时候就需要进行回流。</p>
+<p>​    由此看来，回流对于我们页面的渲染要求较高，可能会影响页面的整体布局，对css渲染的性能影响较大。</p>
+<p>​    <strong>重绘</strong>：当render tree中的一些元素需要更新属性的时候，而这些属性只是影响元素的外观，风格，而不会影响页面的整体布局和元素的尺寸，比如background。</p>
+<p>​    由上面的定义可知，重绘不一定会引发回流，但是回流一定会触发重绘。</p>
+<p>​    <strong>触发页面重布局的因素</strong>：</p>
+<ul>
+<li>盒子模型相关的属性会触发重布局</li>
+<li>定位属性以及浮动会触发重布局</li>
+<li>改变节点内部文字结构也会触发重布局</li>
+</ul>
+<p>###三、避免重绘回流的方法</p>
+<p>​    想要获得更好的前端性能优化和体验势必要在重绘和回流这里进行相关的优化，尤其是在移动端，CPU的运算能力并不是很强，频繁的重绘和回流会造成一些卡顿等问题。所以我们需要在重绘和回流方面做一些优化处理。</p>
+<p>​    在浏览器中，一般新建DOM 的过程主要分为：</p>
+<ol>
+<li>获取DOM后分割为多个图层，这时候的图层会根据我们的一些CSS属性进行一些分割。</li>
+<li>对每个图层的节点计算样式结果。（recalculate style—样式重计算）</li>
+<li>为每个节点生成图形和位置。（layout—回流和重布局）</li>
+<li>将每个节点绘制填充到图层位图中（Paint Setup和Paint—重绘）</li>
+<li>图层作为纹理上传到GPU。</li>
+<li>符合多个图层到页面上生成最后的屏幕图像（Composite Layers—图层重组）</li>
+</ol>
+<p>​       通过这样的一个过程，我们就可以尝试将频繁重绘回流的DOM元素单独作为一个独立的图层，那么这个DOM元素的重绘和回流影响只会在这个图层中，这样就能够减少我们在进行重回回流时候的成本，有效提高css渲染的性能。</p>
+<blockquote>
+<p>​    在chrome浏览器中，构建一个图层的条件主要是：</p>
+<ul>
+<li>3D或者透视变换的css属性</li>
+<li>使用加速视频解码的<video>节点</video></li>
+<li>拥有3D（webGL）上下文或者<canvas>节点</canvas></li>
+</ul>
+</blockquote>
+<p>​    在实际的开发过程中，我们通常会对经常有变化的一些视频，gif图等区域加上一个图层，主要的目的就是让这些重绘和回流的操作控制在一个图层内从而产生较少的性能消耗。但是在实际的业务中也不能建立太多的图层，这是因为图层的建立过程本身会消耗大量的时间。我们打开一个页面，修改这样一段css代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">tanslateZ</span>(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    在chrome浏览器中，这样就给所有的元素创建一个图层，然后利用chrome浏览器中的layers功能，明显现在要卡顿很多，同时这时候利用performs会发现，很明显这时候composite Layers的构建占据了大量的时间，这当然是不符合要求的。而且如果图层的数过多，会导致图层优化后的性能反而不及优化前。</p>
+<h3 id="四、实战中的相关优化点"><a href="#四、实战中的相关优化点" class="headerlink" title="四、实战中的相关优化点"></a>四、实战中的相关优化点</h3><p>1.使用translate代替top</p>
+<p>2.使用opacity替换visibility</p>
+<p>3.不要一条一条修改DOM样式，而是预先定义好class，然后修改DOM的className，以减少重绘的次数。</p>
+<p>4.把DOM离线修改（先display：none）</p>
+<p>5.不要把DOM节点的属性放在一个循环里当成循环的变量。</p>
+<p>6.不要使用table布局，即使是更改最后一行也会造成所有布局的更新。</p>
+<p>7.动画实现的速度选择。</p>
+<p>8.对于动画新建图层</p>
+<p>9.使用GPU硬件加速（并行运算单元）</p>
 
       
     </div>
@@ -472,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/04/js生成器和promise/" rel="next" title="生成器和Promise">
-                <i class="fa fa-chevron-left"></i> 生成器和Promise
+              <a href="/2019/02/17/Vue的简单实现和解读/" rel="next" title="Vue的简单实现和解读">
+                <i class="fa fa-chevron-left"></i> Vue的简单实现和解读
               </a>
             
           </div>
@@ -481,10 +495,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/04/js代理/" rel="prev" title="js代理">
-                js代理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js——闭包问题"><span class="nav-number">1.</span> <span class="nav-text">js——闭包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、理解闭包"><span class="nav-number">1.1.</span> <span class="nav-text">一、理解闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、使用闭包"><span class="nav-number">1.2.</span> <span class="nav-text">二、使用闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-封装私有变量"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.封装私有变量</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、为什么CSS加载性能会让JavaScript变慢？"><span class="nav-number">1.</span> <span class="nav-text">一、为什么CSS加载性能会让JavaScript变慢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、重绘和回流的定义"><span class="nav-number">2.</span> <span class="nav-text">二、重绘和回流的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、实战中的相关优化点"><span class="nav-number">3.</span> <span class="nav-text">四、实战中的相关优化点</span></a></li></ol></div>
             
 
           </div>
